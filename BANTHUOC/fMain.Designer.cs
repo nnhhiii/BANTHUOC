@@ -52,17 +52,19 @@ namespace BANTHUOC
             panel1.Controls.Add(btlienhe);
             panel1.Controls.Add(btbanhang);
             panel1.Controls.Add(btquanly);
-            panel1.Location = new Point(-3, 3);
+            panel1.Location = new Point(-2, 2);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(803, 34);
+            panel1.Size = new Size(642, 27);
             panel1.TabIndex = 0;
             // 
             // btlienhe
             // 
             btlienhe.FlatStyle = FlatStyle.Flat;
-            btlienhe.Location = new Point(219, 0);
+            btlienhe.Location = new Point(175, 0);
+            btlienhe.Margin = new Padding(2, 2, 2, 2);
             btlienhe.Name = "btlienhe";
-            btlienhe.Size = new Size(112, 34);
+            btlienhe.Size = new Size(90, 27);
             btlienhe.TabIndex = 2;
             btlienhe.Text = "Liên hệ";
             btlienhe.UseVisualStyleBackColor = true;
@@ -71,9 +73,10 @@ namespace BANTHUOC
             // btbanhang
             // 
             btbanhang.FlatStyle = FlatStyle.Flat;
-            btbanhang.Location = new Point(112, 0);
+            btbanhang.Location = new Point(90, 0);
+            btbanhang.Margin = new Padding(2, 2, 2, 2);
             btbanhang.Name = "btbanhang";
-            btbanhang.Size = new Size(112, 34);
+            btbanhang.Size = new Size(90, 27);
             btbanhang.TabIndex = 1;
             btbanhang.Text = "Bán hàng";
             btbanhang.UseVisualStyleBackColor = true;
@@ -82,9 +85,10 @@ namespace BANTHUOC
             // btquanly
             // 
             btquanly.FlatStyle = FlatStyle.Flat;
-            btquanly.Location = new Point(3, 0);
+            btquanly.Location = new Point(2, 0);
+            btquanly.Margin = new Padding(2, 2, 2, 2);
             btquanly.Name = "btquanly";
-            btquanly.Size = new Size(112, 34);
+            btquanly.Size = new Size(90, 27);
             btquanly.TabIndex = 0;
             btquanly.Text = "Quản lý";
             btquanly.UseVisualStyleBackColor = true;
@@ -94,18 +98,20 @@ namespace BANTHUOC
             // 
             pnpanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnpanel2.BackColor = SystemColors.ControlLight;
-            pnpanel2.Location = new Point(1, 36);
+            pnpanel2.Location = new Point(1, 29);
+            pnpanel2.Margin = new Padding(2, 2, 2, 2);
             pnpanel2.Name = "pnpanel2";
-            pnpanel2.Size = new Size(799, 100);
+            pnpanel2.Size = new Size(639, 139);
             pnpanel2.TabIndex = 1;
             // 
             // fMain
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(640, 360);
             Controls.Add(pnpanel2);
             Controls.Add(panel1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "fMain";
             Text = "Quản lý hiệu thuốc";
             panel1.ResumeLayout(false);
