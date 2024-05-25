@@ -42,9 +42,9 @@
             hamluong = new DataGridViewTextBoxColumn();
             hangsanxuat = new DataGridViewTextBoxColumn();
             label1 = new Label();
-            comboBox1 = new ComboBox();
             btSave = new Button();
             btClose = new Button();
+            maskedTextBox1 = new MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -155,14 +155,6 @@
             label1.TabIndex = 1;
             label1.Text = "Tổng tiền nhập thuốc";
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(63, 410);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 2;
-            // 
             // btSave
             // 
             btSave.Location = new Point(1092, 386);
@@ -181,14 +173,21 @@
             btClose.Text = "Thoát";
             btClose.UseVisualStyleBackColor = true;
             // 
+            // maskedTextBox1
+            // 
+            maskedTextBox1.Location = new Point(63, 400);
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.Size = new Size(125, 27);
+            maskedTextBox1.TabIndex = 5;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1351, 450);
+            Controls.Add(maskedTextBox1);
             Controls.Add(btClose);
             Controls.Add(btSave);
-            Controls.Add(comboBox1);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Name = "Form2";
@@ -214,8 +213,8 @@
         private DataGridViewTextBoxColumn hamluong;
         private DataGridViewTextBoxColumn hangsanxuat;
         private Label label1;
-        private ComboBox comboBox1;
         private Button btSave;
         private Button btClose;
+        private MaskedTextBox maskedTextBox1;
     }
 }

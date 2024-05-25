@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace BANTHUOC
 {
-    public partial class nhapthuoc : Form
+    public partial class nhapthuocmoi : Form
     {
-        public nhapthuoc()
+        public nhapthuocmoi()
         {
             InitializeComponent();
         }
+
+      
     }
 }
