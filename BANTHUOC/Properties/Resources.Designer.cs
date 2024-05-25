@@ -63,9 +63,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ban {
+        internal static System.Drawing.Bitmap ban_thuoc {
             get {
-                object obj = ResourceManager.GetObject("ban", resourceCulture);
+                object obj = ResourceManager.GetObject("ban_thuoc", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_3 {
+        internal static System.Drawing.Bitmap dang_xuat {
             get {
-                object obj = ResourceManager.GetObject("icon-3", resourceCulture);
+                object obj = ResourceManager.GetObject("dang_xuat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap images {
+        internal static System.Drawing.Bitmap delete {
             get {
-                object obj = ResourceManager.GetObject("images", resourceCulture);
+                object obj = ResourceManager.GetObject("delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap images__1_ {
+        internal static System.Drawing.Bitmap loai_thuoc {
             get {
-                object obj = ResourceManager.GetObject("images (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("loai_thuoc", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap images__2_ {
+        internal static System.Drawing.Bitmap nha_cung_cap {
             get {
-                object obj = ResourceManager.GetObject("images (2)", resourceCulture);
+                object obj = ResourceManager.GetObject("nha_cung_cap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap kho {
+        internal static System.Drawing.Bitmap nhan_vien {
             get {
-                object obj = ResourceManager.GetObject("kho", resourceCulture);
+                object obj = ResourceManager.GetObject("nhan_vien", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,10 +123,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap kisspng_computer_icons_female_avatar_user_woman_5adcb4d2a12855_0755446815244136506601 {
+        internal static System.Drawing.Bitmap nhap_thuoc {
             get {
-                object obj = ResourceManager.GetObject("kisspng-computer-icons-female-avatar-user-woman-5adcb4d2a12855.075544681524413650" +
-                        "6601", resourceCulture);
+                object obj = ResourceManager.GetObject("nhap_thuoc", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -134,9 +133,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nhap {
+        internal static System.Drawing.Bitmap no_image {
             get {
-                object obj = ResourceManager.GetObject("nhap", resourceCulture);
+                object obj = ResourceManager.GetObject("no_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -144,10 +143,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap png_clipart_customs_broking_transport_import_business_export_business_text_orange {
+        internal static System.Drawing.Bitmap save {
             get {
-                object obj = ResourceManager.GetObject("png-clipart-customs-broking-transport-import-business-export-business-text-orange" +
-                        "", resourceCulture);
+                object obj = ResourceManager.GetObject("save", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -155,9 +153,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pngegg__1_ {
+        internal static System.Drawing.Bitmap savebtn {
             get {
-                object obj = ResourceManager.GetObject("pngegg (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("savebtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -165,9 +163,49 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap transparent_medical_asserts_icon_pill_icon_5dce19bdddab67_172135551573788093908 {
+        internal static System.Drawing.Bitmap tai_khoan {
             get {
-                object obj = ResourceManager.GetObject("transparent-medical-asserts-icon-pill-icon-5dce19bdddab67.172135551573788093908", resourceCulture);
+                object obj = ResourceManager.GetObject("tai_khoan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thong_ke_ban_hang {
+            get {
+                object obj = ResourceManager.GetObject("thong_ke_ban_hang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thong_ke_nhap {
+            get {
+                object obj = ResourceManager.GetObject("thong_ke_nhap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thong_ke_ton {
+            get {
+                object obj = ResourceManager.GetObject("thong_ke_ton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thuoc {
+            get {
+                object obj = ResourceManager.GetObject("thuoc", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

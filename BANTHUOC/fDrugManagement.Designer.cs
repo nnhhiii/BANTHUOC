@@ -1,6 +1,6 @@
 ﻿namespace BANTHUOC
 {
-    partial class Form2
+    partial class fDrugManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -28,55 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            label1 = new Label();
+            cbDrugCategory = new ComboBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             SuspendLayout();
             // 
-            // button1
+            // cbDrugCategory
             // 
-            button1.Location = new Point(631, 45);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.DarkSlateGray;
-            label1.Location = new Point(229, 173);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
+            cbDrugCategory.FormattingEnabled = true;
+            cbDrugCategory.Location = new Point(1085, 193);
+            cbDrugCategory.Name = "cbDrugCategory";
+            cbDrugCategory.Size = new Size(179, 28);
+            cbDrugCategory.TabIndex = 1;
+            cbDrugCategory.SelectedIndexChanged += cbDrugCategory_SelectedIndexChanged;
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Location = new Point(463, 173);
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Location = new Point(12, 315);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(250, 125);
+            flowLayoutPanel1.Size = new Size(1900, 650);
             flowLayoutPanel1.TabIndex = 2;
             // 
-            // Form2
+            // fDrugManagement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1304, 727);
+            ClientSize = new Size(1362, 730);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(label1);
-            Controls.Add(button1);
-            Name = "Form2";
-            Text = "Form2";
+            Controls.Add(cbDrugCategory);
+            Name = "fDrugManagement";
+            Text = "fDrugManagement";
+            WindowState = FormWindowState.Maximized;
+            Activated += fDrugManagement_Activated;
+            Load += fDrugManagement_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button button1;
-        private Label label1;
+        private ComboBox cbDrugCategory;
         private FlowLayoutPanel flowLayoutPanel1;
     }
 }
