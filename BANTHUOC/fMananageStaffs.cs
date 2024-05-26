@@ -36,6 +36,9 @@ namespace BANTHUOC
             DateCreate = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
+            btnAdd = new Button();
+            btnFind = new Button();
+            txtFind = new TextBox();
             ((ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -43,7 +46,7 @@ namespace BANTHUOC
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, FullName, DateofBirth, Address, PhoneNumber, RoleID, Email, Password, DateCreate, Edit, Delete });
-            dataGridView1.Location = new Point(57, 60);
+            dataGridView1.Location = new Point(46, 203);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.Size = new Size(1356, 525);
@@ -126,15 +129,44 @@ namespace BANTHUOC
             Delete.Name = "Delete";
             Delete.Width = 200;
             // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(62, 78);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(150, 46);
+            btnAdd.TabIndex = 2;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnFind
+            // 
+            btnFind.Location = new Point(1252, 81);
+            btnFind.Name = "btnFind";
+            btnFind.Size = new Size(150, 46);
+            btnFind.TabIndex = 3;
+            btnFind.Text = "Find";
+            btnFind.UseVisualStyleBackColor = true;
+            // 
+            // txtFind
+            // 
+            txtFind.Location = new Point(839, 85);
+            txtFind.Name = "txtFind";
+            txtFind.Size = new Size(376, 39);
+            txtFind.TabIndex = 4;
+            // 
             // fMananageStaffs
             // 
             ClientSize = new Size(1576, 983);
+            Controls.Add(txtFind);
+            Controls.Add(btnFind);
+            Controls.Add(btnAdd);
             Controls.Add(dataGridView1);
             Name = "fMananageStaffs";
             Text = "Quản lý nhân viên";
             WindowState = FormWindowState.Maximized;
             ((ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         private DataGridView dataGridView1;
@@ -149,5 +181,8 @@ namespace BANTHUOC
         private DataGridViewTextBoxColumn DateCreate;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
+        private Button btnAdd;
+        private Button btnFind;
+        private TextBox txtFind;
     }
 }
