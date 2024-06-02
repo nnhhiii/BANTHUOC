@@ -28,245 +28,264 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            txtPassword = new TextBox();
-            txtEmail = new TextBox();
-            txtStaffID = new TextBox();
-            txtPhoneNumber = new TextBox();
-            txtFullName = new TextBox();
-            txtDateofBirth = new TextBox();
-            txtAddress = new TextBox();
-            txtCreate = new TextBox();
-            lblPassword = new Label();
-            lblEmail = new Label();
-            lblStaffID = new Label();
-            lblPhoneNumber = new Label();
-            lblDateofBirth = new Label();
-            lblAddress = new Label();
-            lblFullName = new Label();
-            lblCreate = new Label();
-            btnClose = new Button();
             btnSave = new Button();
-            panel2 = new Panel();
+            textBox1 = new TextBox();
+            label8 = new Label();
+            password = new TextBox();
+            email = new TextBox();
+            sdt = new TextBox();
+            diachi = new TextBox();
+            ngaysinh = new TextBox();
+            chucvu = new TextBox();
+            hoten = new TextBox();
+            thoat = new Button();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(605, 22);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(186, 136);
-            pictureBox1.TabIndex = 26;
-            pictureBox1.TabStop = false;
-            // 
-            // txtPassword
-            // 
-            txtPassword.Location = new Point(249, 592);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(542, 39);
-            txtPassword.TabIndex = 25;
-            // 
-            // txtEmail
-            // 
-            txtEmail.Location = new Point(249, 524);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(542, 39);
-            txtEmail.TabIndex = 24;
-            // 
-            // txtStaffID
-            // 
-            txtStaffID.Location = new Point(249, 461);
-            txtStaffID.Name = "txtStaffID";
-            txtStaffID.Size = new Size(542, 39);
-            txtStaffID.TabIndex = 23;
-            // 
-            // txtPhoneNumber
-            // 
-            txtPhoneNumber.Location = new Point(249, 397);
-            txtPhoneNumber.Name = "txtPhoneNumber";
-            txtPhoneNumber.Size = new Size(542, 39);
-            txtPhoneNumber.TabIndex = 22;
-            // 
-            // txtFullName
-            // 
-            txtFullName.Location = new Point(249, 202);
-            txtFullName.Name = "txtFullName";
-            txtFullName.Size = new Size(542, 39);
-            txtFullName.TabIndex = 21;
-            // 
-            // txtDateofBirth
-            // 
-            txtDateofBirth.Location = new Point(249, 265);
-            txtDateofBirth.Name = "txtDateofBirth";
-            txtDateofBirth.Size = new Size(542, 39);
-            txtDateofBirth.TabIndex = 20;
-            // 
-            // txtAddress
-            // 
-            txtAddress.Location = new Point(249, 338);
-            txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(542, 39);
-            txtAddress.TabIndex = 19;
-            // 
-            // txtCreate
-            // 
-            txtCreate.Location = new Point(249, 650);
-            txtCreate.Name = "txtCreate";
-            txtCreate.Size = new Size(542, 39);
-            txtCreate.TabIndex = 18;
-            // 
-            // lblPassword
-            // 
-            lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(28, 592);
-            lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(115, 32);
-            lblPassword.TabIndex = 17;
-            lblPassword.Text = "Mật khẩu";
-            // 
-            // lblEmail
-            // 
-            lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(28, 531);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(71, 32);
-            lblEmail.TabIndex = 16;
-            lblEmail.Text = "Email";
-            // 
-            // lblStaffID
-            // 
-            lblStaffID.AutoSize = true;
-            lblStaffID.Location = new Point(28, 468);
-            lblStaffID.Name = "lblStaffID";
-            lblStaffID.Size = new Size(150, 32);
-            lblStaffID.TabIndex = 15;
-            lblStaffID.Text = "ID nhân viên";
-            // 
-            // lblPhoneNumber
-            // 
-            lblPhoneNumber.AutoSize = true;
-            lblPhoneNumber.Location = new Point(28, 404);
-            lblPhoneNumber.Name = "lblPhoneNumber";
-            lblPhoneNumber.Size = new Size(156, 32);
-            lblPhoneNumber.TabIndex = 14;
-            lblPhoneNumber.Text = "Số điện thoại";
-            // 
-            // lblDateofBirth
-            // 
-            lblDateofBirth.AutoSize = true;
-            lblDateofBirth.Location = new Point(28, 272);
-            lblDateofBirth.Name = "lblDateofBirth";
-            lblDateofBirth.Size = new Size(121, 32);
-            lblDateofBirth.TabIndex = 13;
-            lblDateofBirth.Text = "Ngày sinh";
-            // 
-            // lblAddress
-            // 
-            lblAddress.AutoSize = true;
-            lblAddress.Location = new Point(28, 341);
-            lblAddress.Name = "lblAddress";
-            lblAddress.Size = new Size(87, 32);
-            lblAddress.TabIndex = 12;
-            lblAddress.Text = "Địa chỉ";
-            // 
-            // lblFullName
-            // 
-            lblFullName.AutoSize = true;
-            lblFullName.Location = new Point(28, 209);
-            lblFullName.Name = "lblFullName";
-            lblFullName.Size = new Size(87, 32);
-            lblFullName.TabIndex = 11;
-            lblFullName.Text = "Họ tên";
-            // 
-            // lblCreate
-            // 
-            lblCreate.AutoSize = true;
-            lblCreate.Location = new Point(28, 650);
-            lblCreate.Name = "lblCreate";
-            lblCreate.Size = new Size(161, 32);
-            lblCreate.TabIndex = 10;
-            lblCreate.Text = "Ngày vào làm";
-            // 
-            // btnClose
-            // 
-            btnClose.Location = new Point(605, 746);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(137, 81);
-            btnClose.TabIndex = 1;
-            btnClose.Text = "Close";
-            btnClose.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(427, 746);
+            btnSave.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSave.Image = Properties.Resources.savebtn;
+            btnSave.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSave.Location = new Point(730, 603);
+            btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(137, 81);
-            btnSave.TabIndex = 0;
-            btnSave.Text = "Save";
+            btnSave.Size = new Size(99, 51);
+            btnSave.TabIndex = 92;
+            btnSave.Text = "Lưu";
+            btnSave.TextAlign = ContentAlignment.MiddleRight;
+            btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // textBox1
             // 
-            panel2.Controls.Add(pictureBox1);
-            panel2.Controls.Add(txtPassword);
-            panel2.Controls.Add(txtEmail);
-            panel2.Controls.Add(txtStaffID);
-            panel2.Controls.Add(txtPhoneNumber);
-            panel2.Controls.Add(txtFullName);
-            panel2.Controls.Add(txtDateofBirth);
-            panel2.Controls.Add(txtAddress);
-            panel2.Controls.Add(txtCreate);
-            panel2.Controls.Add(lblPassword);
-            panel2.Controls.Add(lblEmail);
-            panel2.Controls.Add(lblStaffID);
-            panel2.Controls.Add(lblPhoneNumber);
-            panel2.Controls.Add(lblDateofBirth);
-            panel2.Controls.Add(lblAddress);
-            panel2.Controls.Add(lblFullName);
-            panel2.Controls.Add(lblCreate);
-            panel2.Controls.Add(btnClose);
-            panel2.Controls.Add(btnSave);
-            panel2.Location = new Point(226, 28);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(856, 865);
-            panel2.TabIndex = 3;
+            textBox1.Location = new Point(527, 362);
+            textBox1.Margin = new Padding(2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(171, 27);
+            textBox1.TabIndex = 91;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(527, 329);
+            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(65, 20);
+            label8.TabIndex = 90;
+            label8.Text = "Giới tính";
+            // 
+            // password
+            // 
+            password.Location = new Point(802, 525);
+            password.Margin = new Padding(2);
+            password.Name = "password";
+            password.Size = new Size(158, 27);
+            password.TabIndex = 89;
+            // 
+            // email
+            // 
+            email.Location = new Point(802, 444);
+            email.Margin = new Padding(2);
+            email.Name = "email";
+            email.Size = new Size(158, 27);
+            email.TabIndex = 88;
+            // 
+            // sdt
+            // 
+            sdt.Location = new Point(802, 362);
+            sdt.Margin = new Padding(2);
+            sdt.Name = "sdt";
+            sdt.Size = new Size(158, 27);
+            sdt.TabIndex = 87;
+            // 
+            // diachi
+            // 
+            diachi.Location = new Point(527, 525);
+            diachi.Margin = new Padding(2);
+            diachi.Name = "diachi";
+            diachi.Size = new Size(171, 27);
+            diachi.TabIndex = 86;
+            // 
+            // ngaysinh
+            // 
+            ngaysinh.AcceptsReturn = true;
+            ngaysinh.Location = new Point(527, 444);
+            ngaysinh.Margin = new Padding(2);
+            ngaysinh.Name = "ngaysinh";
+            ngaysinh.Size = new Size(171, 27);
+            ngaysinh.TabIndex = 85;
+            // 
+            // chucvu
+            // 
+            chucvu.Location = new Point(802, 288);
+            chucvu.Margin = new Padding(2);
+            chucvu.Name = "chucvu";
+            chucvu.Size = new Size(158, 27);
+            chucvu.TabIndex = 84;
+            // 
+            // hoten
+            // 
+            hoten.Location = new Point(527, 288);
+            hoten.Margin = new Padding(2);
+            hoten.Name = "hoten";
+            hoten.Size = new Size(171, 27);
+            hoten.TabIndex = 83;
+            // 
+            // thoat
+            // 
+            thoat.BackgroundImage = Properties.Resources.thoat;
+            thoat.BackgroundImageLayout = ImageLayout.Zoom;
+            thoat.Location = new Point(874, 603);
+            thoat.Margin = new Padding(2);
+            thoat.Name = "thoat";
+            thoat.Size = new Size(99, 51);
+            thoat.TabIndex = 82;
+            thoat.TextImageRelation = TextImageRelation.ImageBeforeText;
+            thoat.UseVisualStyleBackColor = true;
+            thoat.Click += thoat_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(802, 257);
+            label7.Margin = new Padding(2, 0, 2, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(61, 20);
+            label7.TabIndex = 81;
+            label7.Text = "Chức vụ";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(527, 488);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(55, 20);
+            label6.TabIndex = 80;
+            label6.Text = "Địa chỉ";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(802, 329);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(97, 20);
+            label5.TabIndex = 79;
+            label5.Text = "Số điện thoại";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(802, 488);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(70, 20);
+            label4.TabIndex = 78;
+            label4.Text = "Password";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(802, 407);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 20);
+            label3.TabIndex = 77;
+            label3.Text = "Email";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(526, 407);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(74, 20);
+            label2.TabIndex = 76;
+            label2.Text = "Ngày sinh";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(527, 257);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(73, 20);
+            label1.TabIndex = 75;
+            label1.Text = "Họ và tên";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.account;
+            pictureBox1.ErrorImage = Properties.Resources.no_image;
+            pictureBox1.Location = new Point(157, 257);
+            pictureBox1.Margin = new Padding(2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(287, 294);
+            pictureBox1.TabIndex = 74;
+            pictureBox1.TabStop = false;
             // 
             // fEditStaff
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1309, 920);
-            Controls.Add(panel2);
+            ClientSize = new Size(1237, 662);
+            Controls.Add(btnSave);
+            Controls.Add(textBox1);
+            Controls.Add(label8);
+            Controls.Add(password);
+            Controls.Add(email);
+            Controls.Add(sdt);
+            Controls.Add(diachi);
+            Controls.Add(ngaysinh);
+            Controls.Add(chucvu);
+            Controls.Add(hoten);
+            Controls.Add(thoat);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(pictureBox1);
+            Margin = new Padding(2);
             Name = "fEditStaff";
             Text = "Sửa đổi thông tin nhân viên";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private TextBox txtPassword;
-        private TextBox txtEmail;
-        private TextBox txtStaffID;
-        private TextBox txtPhoneNumber;
-        private TextBox txtFullName;
-        private TextBox txtDateofBirth;
-        private TextBox txtAddress;
-        private TextBox txtCreate;
-        private Label lblPassword;
-        private Label lblEmail;
-        private Label lblStaffID;
-        private Label lblPhoneNumber;
-        private Label lblDateofBirth;
-        private Label lblAddress;
-        private Label lblFullName;
-        private Label lblCreate;
-        private Button btnClose;
         private Button btnSave;
-        private Panel panel2;
+        private TextBox textBox1;
+        private Label label8;
+        private TextBox password;
+        private TextBox email;
+        private TextBox sdt;
+        private TextBox diachi;
+        private TextBox ngaysinh;
+        private TextBox chucvu;
+        private TextBox hoten;
+        private Button thoat;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private PictureBox pictureBox1;
     }
 }

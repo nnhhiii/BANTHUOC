@@ -10,15 +10,13 @@ using System.Windows.Forms;
 
 namespace BANTHUOC
 {
-    public partial class fNewStaff : Form
+    public partial class fManagementSellDrugs : Form
     {
-        public fNewStaff()
+        public fManagementSellDrugs()
         {
             InitializeComponent();
         }
-        private void thoat_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+
+        
     }
 }

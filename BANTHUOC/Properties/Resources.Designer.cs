@@ -63,6 +63,16 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap account {
+            get {
+                object obj = ResourceManager.GetObject("account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ban_thuoc {
             get {
                 object obj = ResourceManager.GetObject("ban_thuoc", resourceCulture);
@@ -166,6 +176,16 @@ namespace BANTHUOC.Properties {
         internal static System.Drawing.Bitmap tai_khoan {
             get {
                 object obj = ResourceManager.GetObject("tai_khoan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thoat {
+            get {
+                object obj = ResourceManager.GetObject("thoat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

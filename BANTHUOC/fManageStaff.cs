@@ -46,7 +46,7 @@ namespace BANTHUOC
                     using (var db = new EFDbContext())
                     {
                         Staff staff = db.NhanVien.Single(c => c.id == id);
-                        if (MessageBox.Show("Bạn muốn xóa khách hàng " + staff.full_name, "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (MessageBox.Show("Bạn muốn xóa nhân viên " + staff.full_name, "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             db.NhanVien.Remove(staff);
                             db.SaveChanges();

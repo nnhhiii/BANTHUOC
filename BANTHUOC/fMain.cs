@@ -52,11 +52,28 @@ namespace BANTHUOC
             f.Show();
         }
 
+        private void taikhoan_Click_1(object sender, EventArgs e)
+        {
+            if (Utility.IsOpeningForm("fManagementAccount"))
+                return;
+            fManagementAccount f = new fManagementAccount();
+            f.MdiParent = this;
+            f.Show();
+        }
+
         private void btn_thongke_nhap_Click(object sender, EventArgs e)
         {
             if (Utility.IsOpeningForm("fStatisticImport"))
                 return;
             fStatisticImport f = new fStatisticImport();
+            f.MdiParent = this;
+            f.Show();
+        }
+        private void thongtinThuoc_Click(object sender, EventArgs e)
+        {
+            if (Utility.IsOpeningForm("fManagementDrugInfo"))
+                return;
+            fManagementDrugInfo f = new fManagementDrugInfo();
             f.MdiParent = this;
             f.Show();
         }
@@ -77,6 +94,22 @@ namespace BANTHUOC
             fStatisticInventory f = new fStatisticInventory();
             f.MdiParent = this;
             f.Show();
+        }
+        private void banthuoc_Click(object sender, EventArgs e)
+        {
+            if (Utility.IsOpeningForm("fManagementSellDrugs"))
+                return;
+            fManagementSellDrugs f = new fManagementSellDrugs();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            fLogin loginForm = new fLogin();
+            loginForm.Show();
+
+            this.Close();
         }
     }
 }

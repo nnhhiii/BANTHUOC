@@ -16,5 +16,10 @@ namespace BANTHUOC
         {
             InitializeComponent();
         }
+
+        private void thoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
