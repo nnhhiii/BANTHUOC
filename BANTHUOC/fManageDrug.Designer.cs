@@ -1,6 +1,6 @@
 ﻿namespace BANTHUOC
 {
-    partial class fDrugManagement
+    partial class fManageDrug
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             cbDrugCategory = new ComboBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            btnAdd = new Button();
             SuspendLayout();
             // 
             // cbDrugCategory
@@ -49,14 +50,25 @@
             flowLayoutPanel1.Size = new Size(1900, 650);
             flowLayoutPanel1.TabIndex = 2;
             // 
-            // fDrugManagement
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(53, 193);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(166, 58);
+            btnAdd.TabIndex = 3;
+            btnAdd.Text = "Thêm thuốc mới";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // fManageDrug
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1362, 730);
+            Controls.Add(btnAdd);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(cbDrugCategory);
-            Name = "fDrugManagement";
+            Name = "fManageDrug";
             Text = "fDrugManagement";
             WindowState = FormWindowState.Maximized;
             Activated += fDrugManagement_Activated;
@@ -67,5 +79,6 @@
         #endregion
         private ComboBox cbDrugCategory;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Button btnAdd;
     }
 }

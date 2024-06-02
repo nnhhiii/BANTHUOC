@@ -1,6 +1,6 @@
 ﻿namespace BANTHUOC
 {
-    partial class fDrugCategoryManagement
+    partial class fManageDrugCategory
     {
         /// <summary>
         /// Required designer variable.

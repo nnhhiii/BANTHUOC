@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BANTHUOC
 {
-    public partial class fInventoryStatisticsManagement : Form
+    public partial class fStatisticInventory : Form
     {
-        public fInventoryStatisticsManagement()
+        public fStatisticInventory()
         {
             InitializeComponent();
         }

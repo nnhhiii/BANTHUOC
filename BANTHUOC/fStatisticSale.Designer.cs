@@ -1,6 +1,6 @@
 ﻿namespace BANTHUOC
 {
-    partial class fDrugSalesStatisticsManagement
+    partial class fStatisticSale
     {
         /// <summary>
         /// Required designer variable.
@@ -53,10 +53,10 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { mahoadon, trangthai, username, ngaythanhtoan, mathuoc, tenthuoc, hamluong, hangsanxuat, machitiethoadon, donvi, soluong, giabantheodonvi, thanhtien });
-            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Location = new Point(12, 213);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1334, 341);
+            dataGridView1.Size = new Size(1406, 341);
             dataGridView1.TabIndex = 0;
             // 
             // mahoadon
@@ -153,7 +153,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(87, 369);
+            label1.Location = new Point(87, 766);
             label1.Name = "label1";
             label1.Size = new Size(138, 20);
             label1.TabIndex = 1;
@@ -161,7 +161,7 @@
             // 
             // btSave
             // 
-            btSave.Location = new Point(1060, 386);
+            btSave.Location = new Point(1060, 783);
             btSave.Name = "btSave";
             btSave.Size = new Size(94, 29);
             btSave.TabIndex = 3;
@@ -170,7 +170,7 @@
             // 
             // btClose
             // 
-            btClose.Location = new Point(1189, 386);
+            btClose.Location = new Point(1189, 783);
             btClose.Name = "btClose";
             btClose.Size = new Size(94, 29);
             btClose.TabIndex = 4;
@@ -179,22 +179,22 @@
             // 
             // maskedTextBox1
             // 
-            maskedTextBox1.Location = new Point(87, 392);
+            maskedTextBox1.Location = new Point(87, 789);
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.Size = new Size(125, 27);
             maskedTextBox1.TabIndex = 5;
             // 
-            // fDrugSalesStatisticsManagement
+            // fStatisticSale
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1358, 450);
+            ClientSize = new Size(1430, 787);
             Controls.Add(maskedTextBox1);
             Controls.Add(btClose);
             Controls.Add(btSave);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
-            Name = "fDrugSalesStatisticsManagement";
+            Name = "fStatisticSale";
             Text = "fDrugSalesStatisticsManagement";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

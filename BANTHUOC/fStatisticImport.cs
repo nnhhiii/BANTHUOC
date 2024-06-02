@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace BANTHUOC
 {
-    public partial class nhapthuocmoi : Form
+    public partial class fStatisticImport : Form
     {
-        public nhapthuocmoi()
+        public fStatisticImport()
         {
             InitializeComponent();
         }
-
-      
     }
 }

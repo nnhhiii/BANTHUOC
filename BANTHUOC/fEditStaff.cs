@@ -12,7 +12,7 @@ namespace BANTHUOC
 {
     public partial class fEditStaff : Form
     {
-        public fEditStaff()
+        public fEditStaff(long v)
         {
             InitializeComponent();
         }

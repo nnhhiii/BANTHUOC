@@ -92,6 +92,7 @@ namespace BANTHUOC
             btn_thongke_kho.Text = "Thống kê tồn kho";
             btn_thongke_kho.TextAlign = ContentAlignment.BottomCenter;
             btn_thongke_kho.UseVisualStyleBackColor = true;
+            btn_thongke_kho.Click += btn_thongke_kho_Click;
             // 
             // btn_thongke_ban
             // 
@@ -105,6 +106,7 @@ namespace BANTHUOC
             btn_thongke_ban.Text = "Thống kê bán hàng";
             btn_thongke_ban.TextAlign = ContentAlignment.BottomCenter;
             btn_thongke_ban.UseVisualStyleBackColor = true;
+            btn_thongke_ban.Click += btn_thongke_ban_Click;
             // 
             // btn_thongke_nhap
             // 
@@ -119,6 +121,7 @@ namespace BANTHUOC
             btn_thongke_nhap.TextAlign = ContentAlignment.BottomCenter;
             btn_thongke_nhap.TextImageRelation = TextImageRelation.ImageAboveText;
             btn_thongke_nhap.UseVisualStyleBackColor = true;
+            btn_thongke_nhap.Click += btn_thongke_nhap_Click;
             // 
             // btn_nhap
             // 
@@ -133,6 +136,7 @@ namespace BANTHUOC
             btn_nhap.TextAlign = ContentAlignment.BottomCenter;
             btn_nhap.TextImageRelation = TextImageRelation.ImageAboveText;
             btn_nhap.UseVisualStyleBackColor = true;
+            btn_nhap.Click += btn_nhap_Click;
             // 
             // btn_thuoc
             // 
@@ -174,6 +178,7 @@ namespace BANTHUOC
             btn_ncc.Text = "Nhà cung cấp";
             btn_ncc.TextAlign = ContentAlignment.BottomCenter;
             btn_ncc.UseVisualStyleBackColor = true;
+            btn_ncc.Click += btn_ncc_Click;
             // 
             // btn_nv
             // 
@@ -187,6 +192,7 @@ namespace BANTHUOC
             btn_nv.Text = "Nhân viên";
             btn_nv.TextAlign = ContentAlignment.BottomCenter;
             btn_nv.UseVisualStyleBackColor = true;
+            btn_nv.Click += btn_nv_Click;
             // 
             // tabPage2
             // 

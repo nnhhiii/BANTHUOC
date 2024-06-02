@@ -4,9 +4,9 @@ using System.Data;
 
 namespace BANTHUOC
 {
-    public partial class fDrugManagement : Form
+    public partial class fManageDrug : Form
     {
-        public fDrugManagement()
+        public fManageDrug()
         {
             InitializeComponent();
         }
@@ -171,6 +171,13 @@ namespace BANTHUOC
                 return;
             fEditDrug f = new fEditDrug(drugId);
             f.Show();
+
+            // Lắng nghe sự kiện DrugDeleted
+            f.DrugDeleted += () =>
+            {
+                // Tải lại dữ liệu khi một đối tượng Drug được xóa
+                fDrugManagement_Load(null, null);
+            };
         }
         private void cbDrugCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -180,6 +187,14 @@ namespace BANTHUOC
         private void fDrugManagement_Activated(object sender, EventArgs e)
         {
             cbDrugCategory_SelectedIndexChanged(sender, e);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (Utility.IsOpeningForm("fNewDrug"))
+                return;
+            fNewDrug f = new fNewDrug();
+            f.Show();
         }
     }
 }

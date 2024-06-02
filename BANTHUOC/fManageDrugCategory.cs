@@ -13,9 +13,9 @@ using BANTHUOC.Models;
 
 namespace BANTHUOC
 {
-    public partial class fDrugCategoryManagement : Form
+    public partial class fManageDrugCategory : Form
     {
-        public fDrugCategoryManagement()
+        public fManageDrugCategory()
         {
             InitializeComponent();
 

@@ -1,6 +1,7 @@
 ﻿using BANTHUOC.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
+using System.Windows.Forms;
 
 namespace BANTHUOC
 {
@@ -9,6 +10,7 @@ namespace BANTHUOC
         private Drug drug;
         private long id;
         private EFDbContext db = new EFDbContext();
+        public event Action DrugDeleted;
         public fEditDrug(long id)
         {
             InitializeComponent();
@@ -18,18 +20,18 @@ namespace BANTHUOC
 
         private void fEditDrug_Load(object sender, EventArgs e)
         {
-            drug = db.Thuoc
-                .Include(d => d.DrugCategory)
-                .Include(p => p.Supplier)
-                .Include(d => d.Unit)
-                .Single(d => d.id == id);
+                drug = db.Thuoc
+                    .Include(d => d.DrugCategory)
+                    .Include(p => p.Supplier)
+                    .Include(d => d.Unit)
+                    .Single(d => d.id == id);
 
             if (drug == null)
-                {
-                    MessageBox.Show("Không tìm thấy thông tin thuốc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Close();
-                    return;
-                }
+            {
+                MessageBox.Show("Không tìm thấy thông tin thuốc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Close();
+                return;
+            }
             Text = "SỬA ĐỔI THUỐC " + drug.id.ToString();
             tenThuoc.Text = drug.drug_name;
             hamLuong.Text = drug.content;
@@ -85,18 +87,93 @@ namespace BANTHUOC
             Close();
         }
 
-        private void btBrowse_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "All file|*.*|Bitmap File | *.bmp; *.dib | JPEG | *.jpg; *.jpe; *.jpeg; *.jfif | GIF | *.gif | TIFF | *.tif; *.tiff | PNG | *.png | ICO | *.ico";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                txtImageFile.Text = openFileDialog1.FileName;
-                pictureBox1.ImageLocation = openFileDialog1.FileName;
-            }
-        }
+                // Tìm thuốc với ID tương ứng
+                Drug drug = db.Thuoc.SingleOrDefault(c => c.id == id);
 
-        private void btnSave_Click(object sender, EventArgs e)
+                // Kiểm tra nếu thuốc không tồn tại
+                if (drug == null)
+                {
+                    MessageBox.Show("Không tìm thấy thông tin thuốc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Xác nhận xóa
+                var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa thông tin thuốc này?",
+                                                    "Xác nhận xóa",
+                                                    MessageBoxButtons.YesNo,
+                                                    MessageBoxIcon.Question);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Xóa thông tin thuốc khỏi cơ sở dữ liệu
+                    db.Thuoc.Remove(drug);
+                    db.SaveChanges();
+
+                    // Thông báo và đóng form
+                    MessageBox.Show("Đã xóa thông tin thuốc thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DrugDeleted?.Invoke();
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi, chưa xóa được. Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+    
+
+    private void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(tenThuoc.Text))
+            {
+                toolTip1.Show("Hãy nhập tên thuốc?", tenThuoc, 0, 0, 1000);
+                tenThuoc.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(hamLuong.Text))
+            {
+                toolTip1.Show("Hãy nhập hàm lượng?", hamLuong, 0, 0, 1000);
+                hamLuong.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(dongGoi.Text))
+            {
+                toolTip1.Show("Hãy nhập quy cách đóng gói?", dongGoi, 0, 0, 1000);
+                dongGoi.Focus();
+                return;
+            }
+            if (decimal.TryParse(giaBan.Text, out decimal giaBanValue))
+            {
+                if (giaBanValue < 0)
+                {
+                    toolTip1.Show("Giá trị không được nhỏ hơn 0", giaBan, 0, 0, 1000);
+                    giaBan.Focus();
+                    return;
+                }
+            }
+            if (int.TryParse(soLuongTheoDonViBan.Text, out int soluong))
+            {
+                if (soluong < 1)
+                {
+                    toolTip1.Show("Giá trị không được nhỏ hơn 1", soLuongTheoDonViBan, 0, 0, 1000);
+                    soLuongTheoDonViBan.Focus();
+                    return;
+                }
+            }
+            DateTime expiryDate = hanSuDung.Value.Date;
+            DateTime minExpiryDate = DateTime.Now.Date.AddMonths(6);
+
+            if (expiryDate <= DateTime.Now.Date || expiryDate < minExpiryDate)
+            {
+                toolTip1.Show("Hạn sử dụng phải ít nhất 6 tháng", hanSuDung, 0, 0, 3000);
+                hanSuDung.Focus();
+                return;
+            }
             try
             {
                 drug.drug_name = tenThuoc.Text;
@@ -108,15 +185,14 @@ namespace BANTHUOC
                 drug.side_effects = tacDungPhu.Text;
                 drug.contraindications = chongChiDinh.Text;
                 drug.description = moTa.Text;
-                drug.expiry_date = DateTime.Parse(hanSuDung.Text);
                 drug.image = Path.GetFileName(txtImageFile.Text);
+                drug.expiry_date = expiryDate;
 
                 // Lấy giá trị từ combobox
-                drug.category_id = (long)loaiThuoc.SelectedValue;
-                drug.supplier_id = (long)nhaCungCap.SelectedValue;
-                drug.unit_of_measure_id = (long)donViBan.SelectedValue;
+                drug.category_id = Convert.ToInt64(loaiThuoc.SelectedValue);
+                drug.supplier_id = Convert.ToInt64(loaiThuoc.SelectedValue);
+                drug.unit_of_measure_id = Convert.ToInt64(loaiThuoc.SelectedValue);
 
-                // Lưu hình ảnh vào thư mục nếu cần
                 if (!string.IsNullOrWhiteSpace(txtImageFile.Text))
                 {
                     string ext = txtImageFile.Text.Substring(txtImageFile.Text.LastIndexOf("."), txtImageFile.Text.Length - txtImageFile.Text.LastIndexOf("."));
@@ -136,32 +212,16 @@ namespace BANTHUOC
             tenThuoc.Focus();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btBrowse_Click(object sender, EventArgs e)
         {
-            try
+            openFileDialog1.Filter = "All file|*.*|Bitmap File | *.bmp; *.dib | JPEG | *.jpg; *.jpe; *.jpeg; *.jfif | GIF | *.gif | TIFF | *.tif; *.tiff | PNG | *.png | ICO | *.ico";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                // Hộp thoại xác nhận xóa
-                var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa thông tin thuốc này?",
-                                                        "Xác nhận xóa",
-                                                        MessageBoxButtons.YesNo,
-                                                        MessageBoxIcon.Question);
-
-                if (confirmResult == DialogResult.Yes)
-                {
-                    // Xóa thông tin thuốc khỏi cơ sở dữ liệu
-                    db.Thuoc.Remove(drug);
-                    db.SaveChanges();
-
-                    // Thông báo và đóng form
-                    MessageBox.Show("Đã xóa thông tin thuốc thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi, chưa xóa được? Error: " + ex.Message);
+                txtImageFile.Text = openFileDialog1.FileName;
+                pictureBox1.ImageLocation = openFileDialog1.FileName;
             }
         }
+
+        
     }
 }
