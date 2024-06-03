@@ -20,12 +20,23 @@ namespace BANTHUOC
             string password = txtPassword.Text;
 
             // Gọi phương thức AuthenticateUser để kiểm tra thông tin đăng nhập
-            if (AuthenticateUser(email, password))
+            var employee = AuthenticateUser(email, password);
+            if (employee != null)
             {
                 MessageBox.Show("Đăng nhập thành công!");
 
-                fMain mainForm = new fMain();
-                mainForm.Show();
+                // Kiểm tra role_id và mở form tương ứng
+                if (employee.role_id == 1)
+                {
+                    fMain mainForm = new fMain();
+                    mainForm.Show();
+                }
+                else
+                {
+                    fMainForEmp mainForEmpForm = new fMainForEmp();
+                    mainForEmpForm.Show();
+                }
+
                 this.Hide();
             }
             else
@@ -34,7 +45,7 @@ namespace BANTHUOC
             }
         }
 
-        private bool AuthenticateUser(string email, string password)
+        private Staff AuthenticateUser(string email, string password)
         {
             // Truy vấn email 
             var employee = db.NhanVien.FirstOrDefault(e => e.staff_email == email);
@@ -43,10 +54,10 @@ namespace BANTHUOC
             {
                 if (employee.password == password)
                 {
-                    return true;
+                    return employee;
                 }
             }
-            return false;
+            return null;
         }
     }
 }
