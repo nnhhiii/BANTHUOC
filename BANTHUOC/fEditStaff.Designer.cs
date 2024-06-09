@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnSave = new Button();
             gioitinh = new TextBox();
             label8 = new Label();
@@ -45,6 +46,7 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -266,5 +268,6 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
+        private ToolTip toolTip1;
     }
 }

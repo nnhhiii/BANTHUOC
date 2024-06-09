@@ -43,9 +43,46 @@ namespace BANTHUOC
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(hoten.Text))
+            {
+                toolTip1.Show("Hãy nhập họ và tên", hoten, 0, 0, 1000);
+                hoten.Focus();
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(email.Text))
+            {
+                toolTip1.Show("Hãy nhập email", email, 0, 0, 1000);
+                email.Focus();
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(sdt.Text))
+            {
+                toolTip1.Show("Hãy nhập số điện thoại", sdt, 0, 0, 1000);
+                sdt.Focus();
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(diachi.Text))
+            {
+                toolTip1.Show("Hãy nhập địa chỉ", diachi, 0, 0, 1000);
+                diachi.Focus();
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(ngaysinh.Text))
+            {
+                toolTip1.Show("Hãy chọn ngày sinh", ngaysinh, 0, 0, 1000);
+                ngaysinh.Focus();
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(gioitinh.Text))
+            {
+                toolTip1.Show("Hãy chọn giới tính", gioitinh, 0, 0, 1000);
+                gioitinh.Focus();
+                return;
+            }
+
             try
             {
-                // Cập nhật thông tin của nhân viên từ các control trên form
+                // Cập nhật thông tin nhân viên từ các control trên form
                 staff.full_name = hoten.Text;
                 staff.email = email.Text;
                 staff.phone_number = int.Parse(sdt.Text);
@@ -60,6 +97,8 @@ namespace BANTHUOC
                 }
 
                 MessageBox.Show("Thông tin nhân viên đã được cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Đóng form chỉnh sửa nhân viên
                 this.Close();
             }
             catch (Exception ex)
