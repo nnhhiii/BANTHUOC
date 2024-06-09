@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using BANTHUOC.Models; //truy xuất đến các lớp: Customer,…
 using System.Configuration;
-using System.Data;
+
 namespace BANTHUOC
 {
     internal class EFDbContext : DbContext
@@ -17,9 +17,30 @@ namespace BANTHUOC
         public DbSet<Role> Role { get; set; }
 
         public void ConfigureServices(IServiceCollection services)
-        => services.AddDbContext<EFDbContext>();
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-    }
+            => services.AddDbContext<EFDbContext>();
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            => optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Drug>()
+                .Property(d => d.price)
+                .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<ImportDetail>()
+                .Property(id => id.amount)
+                .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<ImportDetail>()
+                .Property(id => id.import_price)
+                .HasColumnType("decimal(18,2)");
+
+            modelBuilder.Entity<ImportInvoice>()
+                .Property(ii => ii.total_amount)
+                .HasColumnType("decimal(18,2)");
+
+            base.OnModelCreating(modelBuilder);
+        }
+    }
 }

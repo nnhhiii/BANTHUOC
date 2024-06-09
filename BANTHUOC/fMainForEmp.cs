@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BANTHUOC.Models;
 
 namespace BANTHUOC
 {
     public partial class fMainForEmp : Form
     {
-        public fMainForEmp()
+        private Staff loggedInEmployee;
+
+        public fMainForEmp(Staff employee)
         {
             InitializeComponent();
+            this.IsMdiContainer = true;
+            loggedInEmployee = employee;
         }
 
         private void banthuoc_Click(object sender, EventArgs e)
@@ -38,9 +43,10 @@ namespace BANTHUOC
         {
             if (Utility.IsOpeningForm("fManagementAccount"))
                 return;
-            fManagementAccount f = new fManagementAccount();
+            fManagementAccount f = new fManagementAccount(loggedInEmployee);
             f.MdiParent = this;
             f.Show();
         }
     }
 }
+

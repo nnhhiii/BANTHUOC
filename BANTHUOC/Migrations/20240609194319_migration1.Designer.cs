@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BANTHUOC.Migrations
 {
     [DbContext(typeof(EFDbContext))]
-    [Migration("20240609184332_migration1")]
+    [Migration("20240609194319_migration1")]
     partial class migration1
     {
         /// <inheritdoc />
@@ -41,11 +41,9 @@ namespace BANTHUOC.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("contraindications")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("drug_name")
@@ -56,7 +54,6 @@ namespace BANTHUOC.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("packing")
@@ -70,7 +67,6 @@ namespace BANTHUOC.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("side_effects")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("supplier_id")
@@ -80,7 +76,6 @@ namespace BANTHUOC.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("usage_instructions")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
@@ -113,6 +108,120 @@ namespace BANTHUOC.Migrations
                     b.HasKey("category_id");
 
                     b.ToTable("LoaiDuocPham");
+                });
+
+            modelBuilder.Entity("BANTHUOC.Models.ImportDetail", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"));
+
+                    b.Property<decimal>("amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<long>("drug_id")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("expiry_date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("import_invoice_id")
+                        .HasColumnType("bigint");
+
+                    b.Property<decimal>("import_price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.ToTable("CTHDNhapHang");
+                });
+
+            modelBuilder.Entity("BANTHUOC.Models.ImportInvoice", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"));
+
+                    b.Property<DateTime>("creat_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("employee_id")
+                        .HasColumnType("bigint");
+
+                    b.Property<decimal>("total_amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("HoaDonNhapHang");
+                });
+
+            modelBuilder.Entity("BANTHUOC.Models.Role", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("RoleName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Role");
+                });
+
+            modelBuilder.Entity("BANTHUOC.Models.Staff", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"));
+
+                    b.Property<DateTime>("created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("date_of_birth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("full_name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("phone_number")
+                        .HasColumnType("int");
+
+                    b.Property<long>("role_id")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("staff_address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("staff_email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("staff_gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("NhanVien");
                 });
 
             modelBuilder.Entity("BANTHUOC.Models.Supplier", b =>

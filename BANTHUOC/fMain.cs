@@ -1,13 +1,18 @@
 using BANTHUOC;
+using BANTHUOC.Models;
 
 namespace BANTHUOC
 {
     public partial class fMain : Form
     {
-        public fMain()
+        private Staff loggedInEmployee;
+
+        public fMain(Staff employee)
         {
             InitializeComponent();
+            loggedInEmployee = employee;
         }
+   
 
         private void btn_nv_Click(object sender, EventArgs e)
         {
@@ -56,10 +61,12 @@ namespace BANTHUOC
         {
             if (Utility.IsOpeningForm("fManagementAccount"))
                 return;
-            fManagementAccount f = new fManagementAccount();
+            fManagementAccount f = new fManagementAccount(loggedInEmployee); // Chuy?n thông tin nhân viên ?ã ??ng nh?p
             f.MdiParent = this;
             f.Show();
         }
+
+
 
         private void btn_thongke_nhap_Click(object sender, EventArgs e)
         {

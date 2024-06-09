@@ -28,12 +28,12 @@ namespace BANTHUOC
                 // Kiểm tra role_id và mở form tương ứng
                 if (employee.role_id == 1)
                 {
-                    fMain mainForm = new fMain();
+                    fMain mainForm = new fMain(employee);
                     mainForm.Show();
                 }
                 else
                 {
-                    fMainForEmp mainForEmpForm = new fMainForEmp();
+                    fMainForEmp mainForEmpForm = new fMainForEmp(employee);
                     mainForEmpForm.Show();
                 }
 
@@ -45,10 +45,11 @@ namespace BANTHUOC
             }
         }
 
+
         private Staff AuthenticateUser(string email, string password)
         {
             // Truy vấn email 
-            var employee = db.NhanVien.FirstOrDefault(e => e.staff_email == email);
+            var employee = db.NhanVien.FirstOrDefault(e => e.email == email);
 
             if (employee != null)
             {
