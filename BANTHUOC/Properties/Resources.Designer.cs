@@ -10,8 +10,9 @@
 
 namespace BANTHUOC.Properties {
     using System;
-    
-    
+    using System.Drawing;
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -23,7 +24,22 @@ namespace BANTHUOC.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        
+        internal static Image thong_ke_ton;
+        internal static Image thong_ke_ban_hang;
+        internal static Image thong_ke_nhap;
+        internal static Image nhap_thuoc;
+        internal static Image thuoc;
+        internal static Image loai_thuoc;
+        internal static Image nha_cung_cap;
+        internal static Image nhan_vien;
+        internal static Image dang_xuat;
+        internal static Image ban_thuoc;
+        internal static Image tai_khoan;
+        internal static Image account;
+        internal static Image thoat;
+        internal static Image no_image;
+        internal static Image save;
+        internal static Image delete;
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
@@ -63,9 +79,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ban_thuoc {
+        internal static System.Drawing.Bitmap ban {
             get {
-                object obj = ResourceManager.GetObject("ban_thuoc", resourceCulture);
+                object obj = ResourceManager.GetObject("ban", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +89,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dang_xuat {
+        internal static System.Drawing.Bitmap icon_3 {
             get {
-                object obj = ResourceManager.GetObject("dang_xuat", resourceCulture);
+                object obj = ResourceManager.GetObject("icon-3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +99,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap delete {
+        internal static System.Drawing.Bitmap images {
             get {
-                object obj = ResourceManager.GetObject("delete", resourceCulture);
+                object obj = ResourceManager.GetObject("images", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +109,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loai_thuoc {
+        internal static System.Drawing.Bitmap images__1_ {
             get {
-                object obj = ResourceManager.GetObject("loai_thuoc", resourceCulture);
+                object obj = ResourceManager.GetObject("images (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +119,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nha_cung_cap {
+        internal static System.Drawing.Bitmap images__2_ {
             get {
-                object obj = ResourceManager.GetObject("nha_cung_cap", resourceCulture);
+                object obj = ResourceManager.GetObject("images (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +129,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nhan_vien {
+        internal static System.Drawing.Bitmap kho {
             get {
-                object obj = ResourceManager.GetObject("nhan_vien", resourceCulture);
+                object obj = ResourceManager.GetObject("kho", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +139,10 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nhap_thuoc {
+        internal static System.Drawing.Bitmap kisspng_computer_icons_female_avatar_user_woman_5adcb4d2a12855_0755446815244136506601 {
             get {
-                object obj = ResourceManager.GetObject("nhap_thuoc", resourceCulture);
+                object obj = ResourceManager.GetObject("kisspng-computer-icons-female-avatar-user-woman-5adcb4d2a12855.075544681524413650" +
+                        "6601", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +150,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap no_image {
+        internal static System.Drawing.Bitmap nhap {
             get {
-                object obj = ResourceManager.GetObject("no_image", resourceCulture);
+                object obj = ResourceManager.GetObject("nhap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +160,10 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap save {
+        internal static System.Drawing.Bitmap png_clipart_customs_broking_transport_import_business_export_business_text_orange {
             get {
-                object obj = ResourceManager.GetObject("save", resourceCulture);
+                object obj = ResourceManager.GetObject("png-clipart-customs-broking-transport-import-business-export-business-text-orange" +
+                        "", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +171,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap savebtn {
+        internal static System.Drawing.Bitmap pngegg__1_ {
             get {
-                object obj = ResourceManager.GetObject("savebtn", resourceCulture);
+                object obj = ResourceManager.GetObject("pngegg (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,49 +181,9 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tai_khoan {
+        internal static System.Drawing.Bitmap transparent_medical_asserts_icon_pill_icon_5dce19bdddab67_172135551573788093908 {
             get {
-                object obj = ResourceManager.GetObject("tai_khoan", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap thong_ke_ban_hang {
-            get {
-                object obj = ResourceManager.GetObject("thong_ke_ban_hang", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap thong_ke_nhap {
-            get {
-                object obj = ResourceManager.GetObject("thong_ke_nhap", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap thong_ke_ton {
-            get {
-                object obj = ResourceManager.GetObject("thong_ke_ton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap thuoc {
-            get {
-                object obj = ResourceManager.GetObject("thuoc", resourceCulture);
+                object obj = ResourceManager.GetObject("transparent-medical-asserts-icon-pill-icon-5dce19bdddab67.172135551573788093908", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
