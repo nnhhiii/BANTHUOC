@@ -33,74 +33,81 @@
             lblUsername = new Label();
             lblPass = new Label();
             txtUsername = new TextBox();
-            txtPass = new TextBox();
+            txtPassword = new TextBox();
             SuspendLayout();
             // 
             // cbPass
             // 
             cbPass.AutoSize = true;
-            cbPass.Location = new Point(110, 488);
+            cbPass.Location = new Point(68, 305);
+            cbPass.Margin = new Padding(2);
             cbPass.Name = "cbPass";
-            cbPass.Size = new Size(208, 36);
+            cbPass.Size = new Size(132, 24);
             cbPass.TabIndex = 0;
             cbPass.Text = "Show Password";
             cbPass.UseVisualStyleBackColor = true;
             // 
             // btLogin
             // 
-            btLogin.Location = new Point(118, 562);
+            btLogin.Location = new Point(73, 351);
+            btLogin.Margin = new Padding(2);
             btLogin.Name = "btLogin";
-            btLogin.Size = new Size(174, 72);
+            btLogin.Size = new Size(107, 45);
             btLogin.TabIndex = 1;
             btLogin.Text = "Login";
             btLogin.UseVisualStyleBackColor = true;
+            btLogin.Click += btLogin_Click;
             // 
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(118, 150);
+            lblUsername.Location = new Point(73, 94);
+            lblUsername.Margin = new Padding(2, 0, 2, 0);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(121, 32);
+            lblUsername.Size = new Size(75, 20);
             lblUsername.TabIndex = 3;
             lblUsername.Text = "Username";
             // 
             // lblPass
             // 
             lblPass.AutoSize = true;
-            lblPass.Location = new Point(118, 313);
+            lblPass.Location = new Point(73, 196);
+            lblPass.Margin = new Padding(2, 0, 2, 0);
             lblPass.Name = "lblPass";
-            lblPass.Size = new Size(111, 32);
+            lblPass.Size = new Size(70, 20);
             lblPass.TabIndex = 4;
             lblPass.Text = "Password";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(118, 224);
+            txtUsername.Location = new Point(73, 140);
+            txtUsername.Margin = new Padding(2);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(391, 39);
+            txtUsername.Size = new Size(242, 27);
             txtUsername.TabIndex = 5;
             // 
-            // txtPass
+            // txtPassword
             // 
-            txtPass.Location = new Point(118, 399);
-            txtPass.Name = "txtPass";
-            txtPass.Size = new Size(391, 39);
-            txtPass.TabIndex = 6;
+            txtPassword.Location = new Point(73, 249);
+            txtPassword.Margin = new Padding(2);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(242, 27);
+            txtPassword.TabIndex = 6;
             // 
-            // Login
+            // fLogin
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1012, 743);
-            Controls.Add(txtPass);
+            ClientSize = new Size(623, 464);
+            Controls.Add(txtPassword);
             Controls.Add(txtUsername);
             Controls.Add(lblPass);
             Controls.Add(lblUsername);
             Controls.Add(btLogin);
             Controls.Add(cbPass);
-            Name = "Login";
+            Margin = new Padding(2);
+            Name = "fLogin";
             Text = "Hehe Pharmacy";
-            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -112,6 +119,6 @@
         private Label lblUsername;
         private Label lblPass;
         private TextBox txtUsername;
-        private TextBox txtPass;
+        private TextBox txtPassword;
     }
 }

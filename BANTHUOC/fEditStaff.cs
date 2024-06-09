@@ -12,9 +12,14 @@ namespace BANTHUOC
 {
     public partial class fEditStaff : Form
     {
-        public fEditStaff()
+        public fEditStaff(long v)
         {
             InitializeComponent();
+        }
+
+        private void thoat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

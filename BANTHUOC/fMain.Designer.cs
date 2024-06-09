@@ -32,7 +32,7 @@ namespace BANTHUOC
         /// </summary>
         private void InitializeComponent()
         {
-            tabControl1 = new TabControl();
+            btBanthuoc = new TabControl();
             tabPage1 = new TabPage();
             btn_thongke_kho = new Button();
             btn_thongke_ban = new Button();
@@ -43,24 +43,24 @@ namespace BANTHUOC
             btn_ncc = new Button();
             btn_nv = new Button();
             tabPage2 = new TabPage();
-            button9 = new Button();
-            button10 = new Button();
-            button11 = new Button();
-            button12 = new Button();
-            tabControl1.SuspendLayout();
+            btnLogout = new Button();
+            taikhoan = new Button();
+            thongtinThuoc = new Button();
+            banthuoc = new Button();
+            btBanthuoc.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             SuspendLayout();
             // 
-            // tabControl1
+            // btBanthuoc
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(1, 3);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1368, 163);
-            tabControl1.TabIndex = 1;
+            btBanthuoc.Controls.Add(tabPage1);
+            btBanthuoc.Controls.Add(tabPage2);
+            btBanthuoc.Location = new Point(1, 3);
+            btBanthuoc.Name = "btBanthuoc";
+            btBanthuoc.SelectedIndex = 0;
+            btBanthuoc.Size = new Size(1368, 163);
+            btBanthuoc.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -74,7 +74,7 @@ namespace BANTHUOC
             tabPage1.Controls.Add(btn_nv);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
+            tabPage1.Padding = new Padding(3, 3, 3, 3);
             tabPage1.Size = new Size(1360, 130);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Quản lý";
@@ -92,6 +92,7 @@ namespace BANTHUOC
             btn_thongke_kho.Text = "Thống kê tồn kho";
             btn_thongke_kho.TextAlign = ContentAlignment.BottomCenter;
             btn_thongke_kho.UseVisualStyleBackColor = true;
+            btn_thongke_kho.Click += btn_thongke_kho_Click;
             // 
             // btn_thongke_ban
             // 
@@ -105,6 +106,7 @@ namespace BANTHUOC
             btn_thongke_ban.Text = "Thống kê bán hàng";
             btn_thongke_ban.TextAlign = ContentAlignment.BottomCenter;
             btn_thongke_ban.UseVisualStyleBackColor = true;
+            btn_thongke_ban.Click += btn_thongke_ban_Click;
             // 
             // btn_thongke_nhap
             // 
@@ -119,6 +121,7 @@ namespace BANTHUOC
             btn_thongke_nhap.TextAlign = ContentAlignment.BottomCenter;
             btn_thongke_nhap.TextImageRelation = TextImageRelation.ImageAboveText;
             btn_thongke_nhap.UseVisualStyleBackColor = true;
+            btn_thongke_nhap.Click += btn_thongke_nhap_Click;
             // 
             // btn_nhap
             // 
@@ -133,6 +136,7 @@ namespace BANTHUOC
             btn_nhap.TextAlign = ContentAlignment.BottomCenter;
             btn_nhap.TextImageRelation = TextImageRelation.ImageAboveText;
             btn_nhap.UseVisualStyleBackColor = true;
+            btn_nhap.Click += btn_nhap_Click;
             // 
             // btn_thuoc
             // 
@@ -174,6 +178,7 @@ namespace BANTHUOC
             btn_ncc.Text = "Nhà cung cấp";
             btn_ncc.TextAlign = ContentAlignment.BottomCenter;
             btn_ncc.UseVisualStyleBackColor = true;
+            btn_ncc.Click += btn_ncc_Click;
             // 
             // btn_nv
             // 
@@ -187,84 +192,89 @@ namespace BANTHUOC
             btn_nv.Text = "Nhân viên";
             btn_nv.TextAlign = ContentAlignment.BottomCenter;
             btn_nv.UseVisualStyleBackColor = true;
+            btn_nv.Click += btn_nv_Click;
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(button9);
-            tabPage2.Controls.Add(button10);
-            tabPage2.Controls.Add(button11);
-            tabPage2.Controls.Add(button12);
+            tabPage2.Controls.Add(btnLogout);
+            tabPage2.Controls.Add(taikhoan);
+            tabPage2.Controls.Add(thongtinThuoc);
+            tabPage2.Controls.Add(banthuoc);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
+            tabPage2.Padding = new Padding(3, 3, 3, 3);
             tabPage2.Size = new Size(1360, 130);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Bán hàng";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnLogout
             // 
-            button9.BackgroundImageLayout = ImageLayout.None;
-            button9.Image = Properties.Resources.dang_xuat;
-            button9.ImageAlign = ContentAlignment.TopCenter;
-            button9.Location = new Point(340, 6);
-            button9.Name = "button9";
-            button9.Size = new Size(110, 109);
-            button9.TabIndex = 8;
-            button9.Text = "Đăng xuất";
-            button9.TextAlign = ContentAlignment.BottomCenter;
-            button9.UseVisualStyleBackColor = true;
+            btnLogout.BackgroundImageLayout = ImageLayout.None;
+            btnLogout.Image = Properties.Resources.dang_xuat;
+            btnLogout.ImageAlign = ContentAlignment.TopCenter;
+            btnLogout.Location = new Point(340, 6);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(110, 109);
+            btnLogout.TabIndex = 8;
+            btnLogout.Text = "Đăng xuất";
+            btnLogout.TextAlign = ContentAlignment.BottomCenter;
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
-            // button10
+            // taikhoan
             // 
-            button10.BackgroundImageLayout = ImageLayout.None;
-            button10.Image = Properties.Resources.tai_khoan;
-            button10.ImageAlign = ContentAlignment.TopCenter;
-            button10.Location = new Point(228, 6);
-            button10.Name = "button10";
-            button10.Size = new Size(106, 109);
-            button10.TabIndex = 7;
-            button10.Text = "Tài khoản";
-            button10.TextAlign = ContentAlignment.BottomCenter;
-            button10.UseVisualStyleBackColor = true;
+            taikhoan.BackgroundImageLayout = ImageLayout.None;
+            taikhoan.Image = Properties.Resources.tai_khoan;
+            taikhoan.ImageAlign = ContentAlignment.TopCenter;
+            taikhoan.Location = new Point(228, 6);
+            taikhoan.Name = "taikhoan";
+            taikhoan.Size = new Size(106, 109);
+            taikhoan.TabIndex = 7;
+            taikhoan.Text = "Tài khoản";
+            taikhoan.TextAlign = ContentAlignment.BottomCenter;
+            taikhoan.UseVisualStyleBackColor = true;
+            taikhoan.Click += taikhoan_Click_1;
             // 
-            // button11
+            // thongtinThuoc
             // 
-            button11.BackgroundImageLayout = ImageLayout.None;
-            button11.Image = Properties.Resources.thuoc;
-            button11.ImageAlign = ContentAlignment.TopCenter;
-            button11.Location = new Point(116, 6);
-            button11.Name = "button11";
-            button11.Size = new Size(106, 109);
-            button11.TabIndex = 6;
-            button11.Text = "Thông tin thuốc";
-            button11.TextAlign = ContentAlignment.BottomCenter;
-            button11.UseVisualStyleBackColor = true;
+            thongtinThuoc.BackgroundImageLayout = ImageLayout.None;
+            thongtinThuoc.Image = Properties.Resources.thuoc;
+            thongtinThuoc.ImageAlign = ContentAlignment.TopCenter;
+            thongtinThuoc.Location = new Point(116, 6);
+            thongtinThuoc.Name = "thongtinThuoc";
+            thongtinThuoc.Size = new Size(106, 109);
+            thongtinThuoc.TabIndex = 6;
+            thongtinThuoc.Text = "Thông tin thuốc";
+            thongtinThuoc.TextAlign = ContentAlignment.BottomCenter;
+            thongtinThuoc.UseVisualStyleBackColor = true;
+            thongtinThuoc.Click += thongtinThuoc_Click;
             // 
-            // button12
+            // banthuoc
             // 
-            button12.BackgroundImageLayout = ImageLayout.None;
-            button12.Image = Properties.Resources.ban_thuoc;
-            button12.ImageAlign = ContentAlignment.TopCenter;
-            button12.Location = new Point(6, 6);
-            button12.Name = "button12";
-            button12.Size = new Size(104, 109);
-            button12.TabIndex = 5;
-            button12.Text = "Bán thuốc";
-            button12.TextAlign = ContentAlignment.BottomCenter;
-            button12.UseVisualStyleBackColor = true;
+            banthuoc.BackgroundImageLayout = ImageLayout.None;
+            banthuoc.Image = Properties.Resources.ban_thuoc;
+            banthuoc.ImageAlign = ContentAlignment.TopCenter;
+            banthuoc.Location = new Point(6, 6);
+            banthuoc.Name = "banthuoc";
+            banthuoc.Size = new Size(104, 109);
+            banthuoc.TabIndex = 5;
+            banthuoc.Text = "Bán thuốc";
+            banthuoc.TextAlign = ContentAlignment.BottomCenter;
+            banthuoc.UseVisualStyleBackColor = true;
+            banthuoc.Click += banthuoc_Click;
             // 
             // fMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1381, 597);
-            Controls.Add(tabControl1);
+            Controls.Add(btBanthuoc);
             IsMdiContainer = true;
             Name = "fMain";
             Text = "Quản lý hiệu thuốc";
             WindowState = FormWindowState.Maximized;
-            tabControl1.ResumeLayout(false);
+            btBanthuoc.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             ResumeLayout(false);
@@ -272,7 +282,7 @@ namespace BANTHUOC
 
         #endregion
 
-        private TabControl tabControl1;
+        private TabControl btBanthuoc;
         private TabPage tabPage1;
         private Button btn_thongke_kho;
         private Button btn_thongke_ban;
@@ -283,9 +293,9 @@ namespace BANTHUOC
         private Button btn_ncc;
         private Button btn_nv;
         private TabPage tabPage2;
-        private Button button9;
-        private Button button10;
-        private Button button11;
-        private Button button12;
+        private Button btnLogout;
+        private Button taikhoan;
+        private Button thongtinThuoc;
+        private Button banthuoc;
     }
 }

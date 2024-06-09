@@ -79,7 +79,21 @@ namespace BANTHUOC.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap ban {
+=======
+        internal static System.Drawing.Bitmap account {
+            get {
+                object obj = ResourceManager.GetObject("account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ban_thuoc {
+>>>>>>> b331ab1ed8c58ffa618db034d735681e3243ea1d
             get {
                 object obj = ResourceManager.GetObject("ban", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +197,61 @@ namespace BANTHUOC.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap transparent_medical_asserts_icon_pill_icon_5dce19bdddab67_172135551573788093908 {
             get {
+<<<<<<< HEAD
                 object obj = ResourceManager.GetObject("transparent-medical-asserts-icon-pill-icon-5dce19bdddab67.172135551573788093908", resourceCulture);
+=======
+                object obj = ResourceManager.GetObject("tai_khoan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thoat {
+            get {
+                object obj = ResourceManager.GetObject("thoat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thong_ke_ban_hang {
+            get {
+                object obj = ResourceManager.GetObject("thong_ke_ban_hang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thong_ke_nhap {
+            get {
+                object obj = ResourceManager.GetObject("thong_ke_nhap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thong_ke_ton {
+            get {
+                object obj = ResourceManager.GetObject("thong_ke_ton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thuoc {
+            get {
+                object obj = ResourceManager.GetObject("thuoc", resourceCulture);
+>>>>>>> b331ab1ed8c58ffa618db034d735681e3243ea1d
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

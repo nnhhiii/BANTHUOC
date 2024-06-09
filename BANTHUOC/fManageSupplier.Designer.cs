@@ -29,39 +29,82 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            SupplierID = new DataGridViewTextBoxColumn();
+            btnFind = new Button();
+            lblFind = new Label();
+            txtName = new TextBox();
+            btnAdd = new Button();
+            ID = new DataGridViewTextBoxColumn();
             SupplierName = new DataGridViewTextBoxColumn();
             Description = new DataGridViewTextBoxColumn();
             Address = new DataGridViewTextBoxColumn();
             PhoneNumber = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
-            btnFind = new Button();
-            lblFind = new Label();
-            txtFind = new TextBox();
-            btnAdd = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { SupplierID, SupplierName, Description, Address, PhoneNumber, Edit, Delete });
-            dataGridView1.Location = new Point(12, 126);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, SupplierName, Description, Address, PhoneNumber, Edit, Delete });
+            dataGridView1.Location = new Point(9, 315);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.Size = new Size(1341, 523);
+            dataGridView1.Size = new Size(1320, 432);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // SupplierID
+            // btnFind
             // 
-            SupplierID.HeaderText = "ID";
-            SupplierID.MinimumWidth = 10;
-            SupplierID.Name = "SupplierID";
-            SupplierID.Width = 200;
+            btnFind.Location = new Point(795, 262);
+            btnFind.Margin = new Padding(2);
+            btnFind.Name = "btnFind";
+            btnFind.Size = new Size(79, 33);
+            btnFind.TabIndex = 1;
+            btnFind.Text = "Tìm kiếm";
+            btnFind.UseVisualStyleBackColor = true;
+            btnFind.Click += btnFind_Click;
+            // 
+            // lblFind
+            // 
+            lblFind.AutoSize = true;
+            lblFind.Location = new Point(488, 269);
+            lblFind.Margin = new Padding(2, 0, 2, 0);
+            lblFind.Name = "lblFind";
+            lblFind.Size = new Size(100, 20);
+            lblFind.TabIndex = 2;
+            lblFind.Text = "Nhà cung cấp";
+            // 
+            // txtName
+            // 
+            txtName.Location = new Point(601, 265);
+            txtName.Margin = new Padding(2);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(162, 27);
+            txtName.TabIndex = 3;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(9, 265);
+            btnAdd.Margin = new Padding(2);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(92, 29);
+            btnAdd.TabIndex = 4;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // ID
+            // 
+            ID.DataPropertyName = "id";
+            ID.HeaderText = "ID";
+            ID.MinimumWidth = 6;
+            ID.Name = "ID";
             // 
             // SupplierName
             // 
+            SupplierName.DataPropertyName = "supplier_name";
             SupplierName.HeaderText = "Supplier Name";
             SupplierName.MinimumWidth = 10;
             SupplierName.Name = "SupplierName";
@@ -69,6 +112,7 @@
             // 
             // Description
             // 
+            Description.DataPropertyName = "description";
             Description.HeaderText = "Description";
             Description.MinimumWidth = 10;
             Description.Name = "Description";
@@ -76,6 +120,7 @@
             // 
             // Address
             // 
+            Address.DataPropertyName = "address";
             Address.HeaderText = "Address";
             Address.MinimumWidth = 10;
             Address.Name = "Address";
@@ -83,6 +128,7 @@
             // 
             // PhoneNumber
             // 
+            PhoneNumber.DataPropertyName = "phone_number";
             PhoneNumber.HeaderText = "PhoneNumber";
             PhoneNumber.MinimumWidth = 10;
             PhoneNumber.Name = "PhoneNumber";
@@ -93,62 +139,30 @@
             Edit.HeaderText = "Edit";
             Edit.MinimumWidth = 10;
             Edit.Name = "Edit";
-            Edit.Width = 200;
+            Edit.Text = "Sửa";
             // 
             // Delete
             // 
             Delete.HeaderText = "Delete";
             Delete.MinimumWidth = 10;
             Delete.Name = "Delete";
-            Delete.Width = 200;
-            // 
-            // btnFind
-            // 
-            btnFind.Location = new Point(1262, 32);
-            btnFind.Name = "btnFind";
-            btnFind.Size = new Size(128, 53);
-            btnFind.TabIndex = 1;
-            btnFind.Text = "Tìm kiếm";
-            btnFind.UseVisualStyleBackColor = true;
-            // 
-            // lblFind
-            // 
-            lblFind.AutoSize = true;
-            lblFind.Location = new Point(789, 53);
-            lblFind.Name = "lblFind";
-            lblFind.Size = new Size(162, 32);
-            lblFind.TabIndex = 2;
-            lblFind.Text = "Nhà cung cấp";
-            // 
-            // txtFind
-            // 
-            txtFind.Location = new Point(974, 46);
-            txtFind.Name = "txtFind";
-            txtFind.Size = new Size(261, 39);
-            txtFind.TabIndex = 3;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Location = new Point(12, 46);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(150, 46);
-            btnAdd.TabIndex = 4;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
+            Delete.Text = "Xóa";
             // 
             // fManageSupplier
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1402, 867);
+            ClientSize = new Size(1325, 542);
             Controls.Add(btnAdd);
-            Controls.Add(txtFind);
+            Controls.Add(txtName);
             Controls.Add(lblFind);
             Controls.Add(btnFind);
             Controls.Add(dataGridView1);
+            Margin = new Padding(2);
             Name = "fManageSupplier";
             Text = "QUẢN LÝ NHÀ CUNG CẤP";
             WindowState = FormWindowState.Maximized;
+            Activated += fManageSupplier_Activated;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -157,16 +171,16 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn SupplierID;
+        private Button btnFind;
+        private Label lblFind;
+        private TextBox txtName;
+        private Button btnAdd;
+        private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn SupplierName;
         private DataGridViewTextBoxColumn Description;
         private DataGridViewTextBoxColumn Address;
         private DataGridViewTextBoxColumn PhoneNumber;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
-        private Button btnFind;
-        private Label lblFind;
-        private TextBox txtFind;
-        private Button btnAdd;
     }
 }

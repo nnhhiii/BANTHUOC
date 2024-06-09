@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace BANTHUOC
 {
-    public partial class nhapthuocmoi : Form
+    public partial class fManagementDrugInfo : Form
     {
-        public nhapthuocmoi()
+        public fManagementDrugInfo()
         {
             InitializeComponent();
         }
 
-      
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

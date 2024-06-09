@@ -1,6 +1,6 @@
 ﻿namespace BANTHUOC
 {
-    partial class fInventoryStatisticsManagement
+    partial class fStatisticInventory
     {
         /// <summary>
         /// Required designer variable.
@@ -47,10 +47,10 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { tenthuoc, loaithuoc, nhacungcap, donvinhap, ngayhethan, soluongnhap, soluongban, soluongton });
-            dataGridView1.Location = new Point(85, 12);
+            dataGridView1.Location = new Point(12, 211);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1055, 426);
+            dataGridView1.Size = new Size(1079, 426);
             dataGridView1.TabIndex = 0;
             // 
             // tenthuoc
@@ -109,13 +109,13 @@
             soluongton.Name = "soluongton";
             soluongton.Width = 125;
             // 
-            // fInventoryStatisticsManagement
+            // fStatisticInventory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1247, 450);
+            ClientSize = new Size(1247, 792);
             Controls.Add(dataGridView1);
-            Name = "fInventoryStatisticsManagement";
+            Name = "fStatisticInventory";
             Text = "Thống kê tồn kho";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

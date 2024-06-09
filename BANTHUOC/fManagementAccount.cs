@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace BANTHUOC
 {
-    public partial class themthuoctrongkho : Form
+    public partial class fManagementAccount : Form
     {
-        public themthuoctrongkho()
+        public fManagementAccount()
         {
             InitializeComponent();
         }
 
+        private void thoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

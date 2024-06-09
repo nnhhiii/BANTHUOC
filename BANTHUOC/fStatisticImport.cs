@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BANTHUOC
 {
-    public partial class Form2 : Form
+    public partial class fStatisticImport : Form
     {
-        public Form2()
+        public fStatisticImport()
         {
             InitializeComponent();
         }

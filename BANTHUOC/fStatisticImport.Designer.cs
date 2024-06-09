@@ -1,6 +1,6 @@
 ﻿namespace BANTHUOC
 {
-    partial class Form2
+    partial class fStatisticImport
     {
         /// <summary>
         /// Required designer variable.
@@ -55,10 +55,10 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { tenthuoc, donvinhap, giatriquydoi, id, soluongnhap, gianhap, mota, nhaynhap, thanhvien, username, hamluong, hangsanxuat });
-            dataGridView1.Location = new Point(12, 22);
+            dataGridView1.Location = new Point(12, 183);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1327, 342);
+            dataGridView1.Size = new Size(1520, 342);
             dataGridView1.TabIndex = 0;
             // 
             // tenthuoc
@@ -149,7 +149,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.Red;
-            label1.Location = new Point(63, 377);
+            label1.Location = new Point(63, 538);
             label1.Name = "label1";
             label1.Size = new Size(150, 20);
             label1.TabIndex = 1;
@@ -157,7 +157,7 @@
             // 
             // btSave
             // 
-            btSave.Location = new Point(1092, 386);
+            btSave.Location = new Point(1092, 547);
             btSave.Name = "btSave";
             btSave.Size = new Size(94, 29);
             btSave.TabIndex = 3;
@@ -166,7 +166,7 @@
             // 
             // btClose
             // 
-            btClose.Location = new Point(1214, 386);
+            btClose.Location = new Point(1214, 547);
             btClose.Name = "btClose";
             btClose.Size = new Size(94, 29);
             btClose.TabIndex = 4;
@@ -175,22 +175,22 @@
             // 
             // maskedTextBox1
             // 
-            maskedTextBox1.Location = new Point(63, 400);
+            maskedTextBox1.Location = new Point(63, 561);
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.Size = new Size(125, 27);
             maskedTextBox1.TabIndex = 5;
             // 
-            // Form2
+            // fStatisticImport
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1351, 450);
+            ClientSize = new Size(1351, 705);
             Controls.Add(maskedTextBox1);
             Controls.Add(btClose);
             Controls.Add(btSave);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
-            Name = "Form2";
+            Name = "fStatisticImport";
             Text = "Thống kê nhập thuốc";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
