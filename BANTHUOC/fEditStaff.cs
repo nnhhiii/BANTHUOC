@@ -79,6 +79,12 @@ namespace BANTHUOC
                 gioitinh.Focus();
                 return;
             }
+            else if (string.IsNullOrWhiteSpace(chucvu.Text))
+            {
+                toolTip1.Show("Hãy chọn chức vụ", chucvu, 0, 0, 1000);
+                gioitinh.Focus();
+                return;
+            }
 
             try
             {
@@ -89,6 +95,9 @@ namespace BANTHUOC
                 staff.address = diachi.Text;
                 staff.date_of_birth = DateTime.Parse(ngaysinh.Text);
                 staff.gender = gioitinh.Text;
+
+                // Lưu chức vụ của nhân viên vào cơ sở dữ liệu
+                staff.role_id = (chucvu.Text == "Quản lý") ? 1 : 2;
 
                 using (var db = new EFDbContext())
                 {
@@ -106,6 +115,8 @@ namespace BANTHUOC
                 MessageBox.Show("Đã xảy ra lỗi khi cập nhật thông tin nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
     }
 }

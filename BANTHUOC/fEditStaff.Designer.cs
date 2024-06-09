@@ -30,13 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             btnSave = new Button();
-            gioitinh = new TextBox();
             label8 = new Label();
             email = new TextBox();
             sdt = new TextBox();
             diachi = new TextBox();
-            ngaysinh = new TextBox();
-            chucvu = new TextBox();
             hoten = new TextBox();
             thoat = new Button();
             label7 = new Label();
@@ -47,6 +44,9 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             toolTip1 = new ToolTip(components);
+            gioitinh = new ComboBox();
+            ngaysinh = new DateTimePicker();
+            chucvu = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -65,14 +65,6 @@
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
-            // 
-            // gioitinh
-            // 
-            gioitinh.Location = new Point(659, 452);
-            gioitinh.Margin = new Padding(2);
-            gioitinh.Name = "gioitinh";
-            gioitinh.Size = new Size(213, 31);
-            gioitinh.TabIndex = 91;
             // 
             // label8
             // 
@@ -107,23 +99,6 @@
             diachi.Name = "diachi";
             diachi.Size = new Size(539, 31);
             diachi.TabIndex = 86;
-            // 
-            // ngaysinh
-            // 
-            ngaysinh.AcceptsReturn = true;
-            ngaysinh.Location = new Point(659, 555);
-            ngaysinh.Margin = new Padding(2);
-            ngaysinh.Name = "ngaysinh";
-            ngaysinh.Size = new Size(213, 31);
-            ngaysinh.TabIndex = 85;
-            // 
-            // chucvu
-            // 
-            chucvu.Location = new Point(1002, 360);
-            chucvu.Margin = new Padding(2);
-            chucvu.Name = "chucvu";
-            chucvu.Size = new Size(196, 31);
-            chucvu.TabIndex = 84;
             // 
             // hoten
             // 
@@ -217,19 +192,45 @@
             pictureBox1.TabIndex = 74;
             pictureBox1.TabStop = false;
             // 
+            // gioitinh
+            // 
+            gioitinh.FormattingEnabled = true;
+            gioitinh.Items.AddRange(new object[] { "Nam", "Nữ" });
+            gioitinh.Location = new Point(663, 456);
+            gioitinh.Name = "gioitinh";
+            gioitinh.Size = new Size(209, 33);
+            gioitinh.TabIndex = 93;
+            // 
+            // ngaysinh
+            // 
+            ngaysinh.Format = DateTimePickerFormat.Short;
+            ngaysinh.Location = new Point(663, 553);
+            ngaysinh.Name = "ngaysinh";
+            ngaysinh.Size = new Size(213, 31);
+            ngaysinh.TabIndex = 94;
+            // 
+            // chucvu
+            // 
+            chucvu.FormattingEnabled = true;
+            chucvu.Items.AddRange(new object[] { "Nhân viên", "Quản lý" });
+            chucvu.Location = new Point(1002, 358);
+            chucvu.Name = "chucvu";
+            chucvu.Size = new Size(196, 33);
+            chucvu.TabIndex = 95;
+            // 
             // fEditStaff
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1546, 828);
-            Controls.Add(btnSave);
+            Controls.Add(chucvu);
+            Controls.Add(ngaysinh);
             Controls.Add(gioitinh);
+            Controls.Add(btnSave);
             Controls.Add(label8);
             Controls.Add(email);
             Controls.Add(sdt);
             Controls.Add(diachi);
-            Controls.Add(ngaysinh);
-            Controls.Add(chucvu);
             Controls.Add(hoten);
             Controls.Add(thoat);
             Controls.Add(label7);
@@ -250,14 +251,10 @@
         #endregion
 
         private Button btnSave;
-        private TextBox gioitinh;
         private Label label8;
-        private TextBox password;
         private TextBox email;
         private TextBox sdt;
         private TextBox diachi;
-        private TextBox ngaysinh;
-        private TextBox chucvu;
         private TextBox hoten;
         private Button thoat;
         private Label label7;
@@ -269,5 +266,8 @@
         private Label label1;
         private PictureBox pictureBox1;
         private ToolTip toolTip1;
+        private ComboBox gioitinh;
+        private DateTimePicker ngaysinh;
+        private ComboBox chucvu;
     }
 }

@@ -15,6 +15,7 @@ namespace BANTHUOC
         public DbSet<ImportInvoice> HoaDonNhapHang { get; set; }
         public DbSet<ImportDetail> CTHDNhapHang { get; set; }
         public DbSet<Role> Role { get; set; }
+        public object Staffs { get; internal set; }
 
         public void ConfigureServices(IServiceCollection services)
             => services.AddDbContext<EFDbContext>();
