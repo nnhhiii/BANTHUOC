@@ -61,12 +61,28 @@ namespace BANTHUOC
             }
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Edit")
             {
-                if (Utility.IsOpeningForm("fEditStaff"))
-                    return;
-                fEditStaff f = new fEditStaff(Convert.ToInt64(dataGridView1.Rows[e.RowIndex].Cells["id"].Value));
-                f.MdiParent = this.MdiParent;
-                f.Show();
+                try
+                {
+                    // Lấy id của nhân viên từ cột "id" trong DataGridView
+                    long id = Convert.ToInt64(dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
+
+                    // Tạo đối tượng Staff từ id
+                    using (var db = new EFDbContext())
+                    {
+                        Staff staff = db.NhanVien.Single(c => c.id == id);
+
+                        // Hiển thị form fEditStaff với thông tin của nhân viên
+                        fEditStaff f = new fEditStaff(staff);
+                        f.MdiParent = this.MdiParent;
+                        f.Show();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi, không thể sửa? Error: " + ex.Message);
+                }
             }
+
         }
     }
 }
