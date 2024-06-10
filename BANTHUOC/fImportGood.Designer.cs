@@ -1,6 +1,6 @@
 ﻿namespace BANTHUOC
 {
-    partial class fReceivedGood
+    partial class fImportGood
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,6 @@
             label2 = new Label();
             tenThuoc = new ComboBox();
             dataGridView1 = new DataGridView();
-            btnAdd = new Button();
             id = new DataGridViewTextBoxColumn();
             ImportID = new DataGridViewTextBoxColumn();
             drug_id = new DataGridViewTextBoxColumn();
@@ -51,6 +50,7 @@
             Amount = new DataGridViewTextBoxColumn();
             expiry_date = new DataGridViewTextBoxColumn();
             Delete = new DataGridViewButtonColumn();
+            btnAdd = new Button();
             ((System.ComponentModel.ISupportInitialize)soLuongTheoDonViBan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)giaNhap).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -158,18 +158,6 @@
             dataGridView1.TabIndex = 107;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // btnAdd
-            // 
-            btnAdd.Image = Properties.Resources.save;
-            btnAdd.Location = new Point(957, 329);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(129, 55);
-            btnAdd.TabIndex = 108;
-            btnAdd.Text = "Thêm";
-            btnAdd.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
-            // 
             // id
             // 
             id.DataPropertyName = "id";
@@ -205,7 +193,7 @@
             // Quantity
             // 
             Quantity.DataPropertyName = "quantity";
-            Quantity.HeaderText = "Số lượng";
+            Quantity.HeaderText = "Số lượng nhập";
             Quantity.MinimumWidth = 6;
             Quantity.Name = "Quantity";
             Quantity.Width = 125;
@@ -237,7 +225,19 @@
             Delete.UseColumnTextForButtonValue = true;
             Delete.Width = 125;
             // 
-            // fReceivedGood
+            // btnAdd
+            // 
+            btnAdd.Image = Properties.Resources.save;
+            btnAdd.Location = new Point(957, 329);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(129, 55);
+            btnAdd.TabIndex = 108;
+            btnAdd.Text = "Nhập";
+            btnAdd.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // fImportGood
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -254,10 +254,10 @@
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label1);
-            Name = "fReceivedGood";
+            Name = "fImportGood";
             Text = "Nhập hàng trong kho";
             WindowState = FormWindowState.Maximized;
-            Load += fReceivedGood_Load;
+            Load += fImportGood_Load;
             ((System.ComponentModel.ISupportInitialize)soLuongTheoDonViBan).EndInit();
             ((System.ComponentModel.ISupportInitialize)giaNhap).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

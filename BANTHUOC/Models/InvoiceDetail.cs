@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace BANTHUOC.Models
 {
-    internal class ImportInvoice
+    internal class InvoiceDetail
     {
         [Key]
         public long id { get; set; }
-        public decimal total_amount { get; set; }
-        public DateTime create_at { get; set; }
-        public long employee_id { get; set;}
+        public long invoice_id { get; set; }
+        public long drug_id { get; set; }
+        public int quantity { get; set; }
+        public decimal amount { get; set; }
     }
 }

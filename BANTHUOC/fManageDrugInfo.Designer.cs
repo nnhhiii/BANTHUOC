@@ -1,6 +1,6 @@
 ﻿namespace BANTHUOC
 {
-    partial class fManagementDrugInfo
+    partial class fManageDrugInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,27 +29,17 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            giaNhap = new NumericUpDown();
             label15 = new Label();
-            soLuongTheoDonViBan = new NumericUpDown();
-            giaBan = new NumericUpDown();
-            donViBan = new ComboBox();
-            hanSuDung = new DateTimePicker();
             label11 = new Label();
             label10 = new Label();
             label5 = new Label();
             label4 = new Label();
-            loaiThuoc = new ComboBox();
-            label14 = new Label();
-            btBrowse = new Button();
-            txtImageFile = new TextBox();
-            nhaCungCap = new ComboBox();
             moTa = new RichTextBox();
             chongChiDinh = new RichTextBox();
             huongDanSuDung = new RichTextBox();
             hamLuong = new RichTextBox();
             dongGoi = new RichTextBox();
-            tenThuoc = new RichTextBox();
+            nhaCungCap = new RichTextBox();
             tacDungPhu = new RichTextBox();
             btnClose = new Button();
             label13 = new Label();
@@ -64,64 +54,30 @@
             openFileDialog1 = new OpenFileDialog();
             pictureBox1 = new PictureBox();
             toolTip1 = new ToolTip(components);
-            ((System.ComponentModel.ISupportInitialize)giaNhap).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)soLuongTheoDonViBan).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)giaBan).BeginInit();
+            tenThuoc = new ComboBox();
+            loaiThuoc = new RichTextBox();
+            giaNhap = new RichTextBox();
+            donVi = new RichTextBox();
+            soLuong = new RichTextBox();
+            hanSuDung = new RichTextBox();
+            giaBan = new RichTextBox();
+            label14 = new Label();
+            txtImageFile = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // giaNhap
-            // 
-            giaNhap.Location = new Point(794, 562);
-            giaNhap.Maximum = new decimal(new int[] { 276447232, 23283, 0, 0 });
-            giaNhap.Name = "giaNhap";
-            giaNhap.Size = new Size(322, 27);
-            giaNhap.TabIndex = 152;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(608, 562);
+            label15.Location = new Point(574, 498);
             label15.Name = "label15";
             label15.Size = new Size(68, 20);
             label15.TabIndex = 151;
             label15.Text = "Giá nhập";
             // 
-            // soLuongTheoDonViBan
-            // 
-            soLuongTheoDonViBan.Location = new Point(794, 743);
-            soLuongTheoDonViBan.Maximum = new decimal(new int[] { 276447232, 23283, 0, 0 });
-            soLuongTheoDonViBan.Name = "soLuongTheoDonViBan";
-            soLuongTheoDonViBan.Size = new Size(322, 27);
-            soLuongTheoDonViBan.TabIndex = 150;
-            // 
-            // giaBan
-            // 
-            giaBan.Location = new Point(794, 620);
-            giaBan.Maximum = new decimal(new int[] { 276447232, 23283, 0, 0 });
-            giaBan.Name = "giaBan";
-            giaBan.Size = new Size(322, 27);
-            giaBan.TabIndex = 149;
-            // 
-            // donViBan
-            // 
-            donViBan.FormattingEnabled = true;
-            donViBan.Location = new Point(794, 679);
-            donViBan.Name = "donViBan";
-            donViBan.Size = new Size(322, 28);
-            donViBan.TabIndex = 147;
-            // 
-            // hanSuDung
-            // 
-            hanSuDung.Format = DateTimePickerFormat.Short;
-            hanSuDung.Location = new Point(794, 815);
-            hanSuDung.Name = "hanSuDung";
-            hanSuDung.Size = new Size(322, 27);
-            hanSuDung.TabIndex = 148;
-            // 
             // label11
             // 
-            label11.Location = new Point(608, 735);
+            label11.Location = new Point(574, 671);
             label11.Name = "label11";
             label11.Size = new Size(134, 54);
             label11.TabIndex = 146;
@@ -130,7 +86,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(608, 817);
+            label10.Location = new Point(574, 753);
             label10.Name = "label10";
             label10.Size = new Size(93, 20);
             label10.TabIndex = 145;
@@ -139,7 +95,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(608, 679);
+            label5.Location = new Point(574, 615);
             label5.Name = "label5";
             label5.Size = new Size(81, 20);
             label5.TabIndex = 144;
@@ -148,64 +104,23 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(608, 620);
+            label4.Location = new Point(574, 556);
             label4.Name = "label4";
             label4.Size = new Size(60, 20);
             label4.TabIndex = 143;
             label4.Text = "Giá bán";
             // 
-            // loaiThuoc
-            // 
-            loaiThuoc.FormattingEnabled = true;
-            loaiThuoc.Location = new Point(794, 338);
-            loaiThuoc.Name = "loaiThuoc";
-            loaiThuoc.Size = new Size(322, 28);
-            loaiThuoc.TabIndex = 142;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(141, 550);
-            label14.Name = "label14";
-            label14.Size = new Size(87, 20);
-            label14.TabIndex = 141;
-            label14.Text = "Tập tin hình";
-            // 
-            // btBrowse
-            // 
-            btBrowse.Location = new Point(463, 545);
-            btBrowse.Name = "btBrowse";
-            btBrowse.Size = new Size(92, 29);
-            btBrowse.TabIndex = 140;
-            btBrowse.Text = "Chọn ảnh";
-            btBrowse.UseVisualStyleBackColor = true;
-            // 
-            // txtImageFile
-            // 
-            txtImageFile.Location = new Point(275, 547);
-            txtImageFile.Name = "txtImageFile";
-            txtImageFile.Size = new Size(182, 27);
-            txtImageFile.TabIndex = 139;
-            // 
-            // nhaCungCap
-            // 
-            nhaCungCap.FormattingEnabled = true;
-            nhaCungCap.Location = new Point(794, 395);
-            nhaCungCap.Name = "nhaCungCap";
-            nhaCungCap.Size = new Size(322, 28);
-            nhaCungCap.TabIndex = 138;
-            // 
             // moTa
             // 
-            moTa.Location = new Point(275, 815);
+            moTa.Location = new Point(241, 751);
             moTa.Name = "moTa";
-            moTa.Size = new Size(268, 64);
+            moTa.Size = new Size(262, 64);
             moTa.TabIndex = 137;
             moTa.Text = "";
             // 
             // chongChiDinh
             // 
-            chongChiDinh.Location = new Point(275, 757);
+            chongChiDinh.Location = new Point(241, 693);
             chongChiDinh.Name = "chongChiDinh";
             chongChiDinh.Size = new Size(262, 42);
             chongChiDinh.TabIndex = 136;
@@ -213,7 +128,7 @@
             // 
             // huongDanSuDung
             // 
-            huongDanSuDung.Location = new Point(275, 600);
+            huongDanSuDung.Location = new Point(241, 536);
             huongDanSuDung.Name = "huongDanSuDung";
             huongDanSuDung.Size = new Size(262, 64);
             huongDanSuDung.TabIndex = 135;
@@ -221,7 +136,7 @@
             // 
             // hamLuong
             // 
-            hamLuong.Location = new Point(794, 446);
+            hamLuong.Location = new Point(760, 382);
             hamLuong.Name = "hamLuong";
             hamLuong.Size = new Size(322, 30);
             hamLuong.TabIndex = 134;
@@ -229,23 +144,23 @@
             // 
             // dongGoi
             // 
-            dongGoi.Location = new Point(794, 498);
+            dongGoi.Location = new Point(760, 434);
             dongGoi.Name = "dongGoi";
             dongGoi.Size = new Size(322, 30);
             dongGoi.TabIndex = 133;
             dongGoi.Text = "";
             // 
-            // tenThuoc
+            // nhaCungCap
             // 
-            tenThuoc.Location = new Point(794, 278);
-            tenThuoc.Name = "tenThuoc";
-            tenThuoc.Size = new Size(322, 30);
-            tenThuoc.TabIndex = 132;
-            tenThuoc.Text = "";
+            nhaCungCap.Location = new Point(760, 321);
+            nhaCungCap.Name = "nhaCungCap";
+            nhaCungCap.Size = new Size(322, 30);
+            nhaCungCap.TabIndex = 132;
+            nhaCungCap.Text = "";
             // 
             // tacDungPhu
             // 
-            tacDungPhu.Location = new Point(275, 689);
+            tacDungPhu.Location = new Point(241, 625);
             tacDungPhu.Name = "tacDungPhu";
             tacDungPhu.Size = new Size(262, 48);
             tacDungPhu.TabIndex = 131;
@@ -253,7 +168,7 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(1024, 898);
+            btnClose.Location = new Point(990, 834);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(111, 55);
             btnClose.TabIndex = 130;
@@ -263,7 +178,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(608, 446);
+            label13.Location = new Point(574, 382);
             label13.Name = "label13";
             label13.Size = new Size(84, 20);
             label13.TabIndex = 128;
@@ -272,7 +187,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(608, 501);
+            label12.Location = new Point(574, 437);
             label12.Name = "label12";
             label12.Size = new Size(134, 20);
             label12.TabIndex = 127;
@@ -281,7 +196,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(141, 689);
+            label9.Location = new Point(107, 625);
             label9.Name = "label9";
             label9.Size = new Size(97, 20);
             label9.TabIndex = 126;
@@ -289,7 +204,7 @@
             // 
             // label8
             // 
-            label8.Location = new Point(141, 603);
+            label8.Location = new Point(107, 539);
             label8.Name = "label8";
             label8.Size = new Size(108, 47);
             label8.TabIndex = 125;
@@ -298,7 +213,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(141, 760);
+            label7.Location = new Point(107, 696);
             label7.Name = "label7";
             label7.Size = new Size(108, 20);
             label7.TabIndex = 124;
@@ -307,7 +222,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(141, 815);
+            label6.Location = new Point(107, 751);
             label6.Name = "label6";
             label6.Size = new Size(48, 20);
             label6.TabIndex = 123;
@@ -316,7 +231,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(608, 395);
+            label3.Location = new Point(574, 331);
             label3.Name = "label3";
             label3.Size = new Size(100, 20);
             label3.TabIndex = 122;
@@ -325,7 +240,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(608, 338);
+            label2.Location = new Point(574, 274);
             label2.Name = "label2";
             label2.Size = new Size(78, 20);
             label2.TabIndex = 121;
@@ -334,7 +249,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(608, 288);
+            label1.Location = new Point(574, 224);
             label1.Name = "label1";
             label1.Size = new Size(73, 20);
             label1.TabIndex = 120;
@@ -348,38 +263,110 @@
             // 
             pictureBox1.ErrorImage = Properties.Resources.no_image;
             pictureBox1.Image = Properties.Resources.no_image;
-            pictureBox1.Location = new Point(151, 269);
+            pictureBox1.Location = new Point(117, 205);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(404, 267);
             pictureBox1.TabIndex = 119;
             pictureBox1.TabStop = false;
             // 
-            // fManagementDrugInfo
+            // tenThuoc
+            // 
+            tenThuoc.FormattingEnabled = true;
+            tenThuoc.Location = new Point(760, 216);
+            tenThuoc.Name = "tenThuoc";
+            tenThuoc.Size = new Size(322, 28);
+            tenThuoc.TabIndex = 153;
+            tenThuoc.SelectedIndexChanged += tenThuoc_SelectedIndexChanged;
+            // 
+            // loaiThuoc
+            // 
+            loaiThuoc.Location = new Point(760, 264);
+            loaiThuoc.Name = "loaiThuoc";
+            loaiThuoc.Size = new Size(322, 30);
+            loaiThuoc.TabIndex = 154;
+            loaiThuoc.Text = "";
+            // 
+            // giaNhap
+            // 
+            giaNhap.Location = new Point(760, 488);
+            giaNhap.Name = "giaNhap";
+            giaNhap.Size = new Size(322, 30);
+            giaNhap.TabIndex = 155;
+            giaNhap.Text = "";
+            // 
+            // donVi
+            // 
+            donVi.Location = new Point(760, 612);
+            donVi.Name = "donVi";
+            donVi.Size = new Size(322, 30);
+            donVi.TabIndex = 156;
+            donVi.Text = "";
+            // 
+            // soLuong
+            // 
+            soLuong.Location = new Point(760, 686);
+            soLuong.Name = "soLuong";
+            soLuong.Size = new Size(322, 30);
+            soLuong.TabIndex = 157;
+            soLuong.Text = "";
+            // 
+            // hanSuDung
+            // 
+            hanSuDung.Location = new Point(760, 748);
+            hanSuDung.Name = "hanSuDung";
+            hanSuDung.Size = new Size(322, 30);
+            hanSuDung.TabIndex = 158;
+            hanSuDung.Text = "";
+            // 
+            // giaBan
+            // 
+            giaBan.Location = new Point(760, 553);
+            giaBan.Name = "giaBan";
+            giaBan.Size = new Size(322, 30);
+            giaBan.TabIndex = 159;
+            giaBan.Text = "";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(107, 491);
+            label14.Name = "label14";
+            label14.Size = new Size(87, 20);
+            label14.TabIndex = 162;
+            label14.Text = "Tập tin hình";
+            // 
+            // txtImageFile
+            // 
+            txtImageFile.Location = new Point(241, 488);
+            txtImageFile.Name = "txtImageFile";
+            txtImageFile.Size = new Size(262, 27);
+            txtImageFile.TabIndex = 160;
+            // 
+            // fManageDrugInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1296, 840);
-            Controls.Add(giaNhap);
-            Controls.Add(label15);
-            Controls.Add(soLuongTheoDonViBan);
+            ClientSize = new Size(1296, 1055);
+            Controls.Add(label14);
+            Controls.Add(txtImageFile);
             Controls.Add(giaBan);
-            Controls.Add(donViBan);
             Controls.Add(hanSuDung);
+            Controls.Add(soLuong);
+            Controls.Add(donVi);
+            Controls.Add(giaNhap);
+            Controls.Add(loaiThuoc);
+            Controls.Add(tenThuoc);
+            Controls.Add(label15);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(loaiThuoc);
-            Controls.Add(label14);
-            Controls.Add(btBrowse);
-            Controls.Add(txtImageFile);
-            Controls.Add(nhaCungCap);
             Controls.Add(moTa);
             Controls.Add(chongChiDinh);
             Controls.Add(huongDanSuDung);
             Controls.Add(hamLuong);
             Controls.Add(dongGoi);
-            Controls.Add(tenThuoc);
+            Controls.Add(nhaCungCap);
             Controls.Add(tacDungPhu);
             Controls.Add(btnClose);
             Controls.Add(label13);
@@ -392,41 +379,28 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
-            Margin = new Padding(2, 2, 2, 2);
-            Name = "fManagementDrugInfo";
+            Margin = new Padding(2);
+            Name = "fManageDrugInfo";
             Text = "Thông tin thuốc";
             WindowState = FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)giaNhap).EndInit();
-            ((System.ComponentModel.ISupportInitialize)soLuongTheoDonViBan).EndInit();
-            ((System.ComponentModel.ISupportInitialize)giaBan).EndInit();
+            Load += fManageDrugInfo_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private NumericUpDown giaNhap;
         private Label label15;
-        private NumericUpDown soLuongTheoDonViBan;
-        private NumericUpDown giaBan;
-        private ComboBox donViBan;
-        private DateTimePicker hanSuDung;
         private Label label11;
         private Label label10;
         private Label label5;
         private Label label4;
-        private ComboBox loaiThuoc;
-        private Label label14;
-        private Button btBrowse;
-        private TextBox txtImageFile;
-        private ComboBox nhaCungCap;
         private RichTextBox moTa;
         private RichTextBox chongChiDinh;
         private RichTextBox huongDanSuDung;
         private RichTextBox hamLuong;
         private RichTextBox dongGoi;
-        private RichTextBox tenThuoc;
+        private RichTextBox nhaCungCap;
         private RichTextBox tacDungPhu;
         private Button btnClose;
         private Label label13;
@@ -441,5 +415,14 @@
         private OpenFileDialog openFileDialog1;
         private PictureBox pictureBox1;
         private ToolTip toolTip1;
+        private ComboBox tenThuoc;
+        private RichTextBox loaiThuoc;
+        private RichTextBox giaNhap;
+        private RichTextBox donVi;
+        private RichTextBox soLuong;
+        private RichTextBox hanSuDung;
+        private RichTextBox giaBan;
+        private Label label14;
+        private TextBox txtImageFile;
     }
 }

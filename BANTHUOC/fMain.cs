@@ -1,12 +1,15 @@
 using BANTHUOC;
+using BANTHUOC.Models;
 
 namespace BANTHUOC
 {
     public partial class fMain : Form
     {
-        public fMain()
+        private Staff loggedInEmployee;
+        public fMain(Staff employee)
         {
             InitializeComponent();
+            this.loggedInEmployee = employee;
         }
 
         private void btn_nv_Click(object sender, EventArgs e)
@@ -45,21 +48,14 @@ namespace BANTHUOC
 
         private void btn_nhap_Click(object sender, EventArgs e)
         {
-            if (Utility.IsOpeningForm("fReceivedGood"))
+            if (Utility.IsOpeningForm("fImportGood"))
                 return;
-            fReceivedGood f = new fReceivedGood();
+            fImportGood f = new fImportGood();
             f.MdiParent = this;
             f.Show();
         }
 
-        private void taikhoan_Click_1(object sender, EventArgs e)
-        {
-            if (Utility.IsOpeningForm("fManagementAccount"))
-                return;
-            fManagementAccount f = new fManagementAccount();
-            f.MdiParent = this;
-            f.Show();
-        }
+        
 
         private void btn_thongke_nhap_Click(object sender, EventArgs e)
         {
@@ -71,9 +67,9 @@ namespace BANTHUOC
         }
         private void thongtinThuoc_Click(object sender, EventArgs e)
         {
-            if (Utility.IsOpeningForm("fManagementDrugInfo"))
+            if (Utility.IsOpeningForm("fManageDrugInfo"))
                 return;
-            fManagementDrugInfo f = new fManagementDrugInfo();
+            fManageDrugInfo f = new fManageDrugInfo();
             f.MdiParent = this;
             f.Show();
         }
@@ -97,9 +93,17 @@ namespace BANTHUOC
         }
         private void banthuoc_Click(object sender, EventArgs e)
         {
-            if (Utility.IsOpeningForm("fManagementSellDrugs"))
+            if (Utility.IsOpeningForm("fManageSellDrug"))
                 return;
-            fManagementSellDrugs f = new fManagementSellDrugs();
+            fManageSellDrug f = new fManageSellDrug(loggedInEmployee);
+            f.MdiParent = this;
+            f.Show();
+        }
+        private void taikhoan_Click_1(object sender, EventArgs e)
+        {
+            if (Utility.IsOpeningForm("fManageAccount"))
+                return;
+            fManageAccount f = new fManageAccount(loggedInEmployee);
             f.MdiParent = this;
             f.Show();
         }

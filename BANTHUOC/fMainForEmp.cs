@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BANTHUOC.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +13,18 @@ namespace BANTHUOC
 {
     public partial class fMainForEmp : Form
     {
-        public fMainForEmp()
+        private Staff loggedInEmployee;
+        public fMainForEmp(Staff employee)
         {
             InitializeComponent();
+            this.loggedInEmployee = employee;
         }
 
         private void banthuoc_Click(object sender, EventArgs e)
         {
-            if (Utility.IsOpeningForm("fManagementSellDrugs"))
+            if (Utility.IsOpeningForm("fManageSellDrug"))
                 return;
-            fManagementSellDrugs f = new fManagementSellDrugs();
+            fManageSellDrug f = new fManageSellDrug(loggedInEmployee);
             f.MdiParent = this;
             f.Show();
         }
@@ -38,7 +41,7 @@ namespace BANTHUOC
         {
             if (Utility.IsOpeningForm("fManagementAccount"))
                 return;
-            fManagementAccount f = new fManagementAccount();
+            fManageAccount f = new fManageAccount(loggedInEmployee);
             f.MdiParent = this;
             f.Show();
         }

@@ -120,10 +120,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1353, 450);
+            ClientSize = new Size(1353, 463);
             Controls.Add(btBanthuoc);
+            IsMdiContainer = true;
             Name = "fMainForEmp";
             Text = "fMainForEmp";
+            WindowState = FormWindowState.Maximized;
             tabPage2.ResumeLayout(false);
             btBanthuoc.ResumeLayout(false);
             ResumeLayout(false);

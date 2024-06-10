@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace BANTHUOC.Models
 {
-    internal class Staff
+    public class Staff
     {
         [Key]
         public long id { get; set; }

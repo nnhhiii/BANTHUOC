@@ -14,6 +14,8 @@ namespace BANTHUOC
         public DbSet<Staff> NhanVien { get; set; }
         public DbSet<ImportInvoice> HoaDonNhapHang { get; set; }
         public DbSet<ImportDetail> CTHDNhapHang { get; set; }
+        public DbSet<Invoice> HoaDonBanHang { get; set; }
+        public DbSet<InvoiceDetail> CTHDBanHang { get; set; }
         public DbSet<Role> Role { get; set; }
 
         public void ConfigureServices(IServiceCollection services)

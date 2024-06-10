@@ -50,11 +50,12 @@
             dataGridView1.Location = new Point(12, 211);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1079, 426);
+            dataGridView1.Size = new Size(1170, 426);
             dataGridView1.TabIndex = 0;
             // 
             // tenthuoc
             // 
+            tenthuoc.DataPropertyName = "DrugName";
             tenthuoc.HeaderText = "Tên Thuốc";
             tenthuoc.MinimumWidth = 6;
             tenthuoc.Name = "tenthuoc";
@@ -62,6 +63,7 @@
             // 
             // loaithuoc
             // 
+            loaithuoc.DataPropertyName = "CategoryName";
             loaithuoc.HeaderText = "Loại Thuốc";
             loaithuoc.MinimumWidth = 6;
             loaithuoc.Name = "loaithuoc";
@@ -69,6 +71,7 @@
             // 
             // nhacungcap
             // 
+            nhacungcap.DataPropertyName = "SupplierName";
             nhacungcap.HeaderText = "Nhà Cung Cấp";
             nhacungcap.MinimumWidth = 6;
             nhacungcap.Name = "nhacungcap";
@@ -76,6 +79,7 @@
             // 
             // donvinhap
             // 
+            donvinhap.DataPropertyName = "UnitName";
             donvinhap.HeaderText = "Đơn Vị Nhập";
             donvinhap.MinimumWidth = 6;
             donvinhap.Name = "donvinhap";
@@ -83,6 +87,7 @@
             // 
             // ngayhethan
             // 
+            ngayhethan.DataPropertyName = "ExpiryDate";
             ngayhethan.HeaderText = "Ngày Hết Hạn";
             ngayhethan.MinimumWidth = 6;
             ngayhethan.Name = "ngayhethan";
@@ -90,6 +95,7 @@
             // 
             // soluongnhap
             // 
+            soluongnhap.DataPropertyName = "TotalImportQuantity";
             soluongnhap.HeaderText = "Số Lượng Nhập";
             soluongnhap.MinimumWidth = 6;
             soluongnhap.Name = "soluongnhap";
@@ -97,6 +103,7 @@
             // 
             // soluongban
             // 
+            soluongban.DataPropertyName = "TotalSaleQuantity";
             soluongban.HeaderText = "Số Lượng Bán";
             soluongban.MinimumWidth = 6;
             soluongban.Name = "soluongban";
@@ -104,6 +111,7 @@
             // 
             // soluongton
             // 
+            soluongton.DataPropertyName = "StockQuantity";
             soluongton.HeaderText = "Số Lượng Tồn";
             soluongton.MinimumWidth = 6;
             soluongton.Name = "soluongton";
@@ -117,6 +125,8 @@
             Controls.Add(dataGridView1);
             Name = "fStatisticInventory";
             Text = "Thống kê tồn kho";
+            WindowState = FormWindowState.Maximized;
+            Load += fStatisticInventory_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }

@@ -8,7 +8,6 @@ namespace BANTHUOC
     public partial class fLogin : Form
     {
         private EFDbContext db = new EFDbContext(); // Khởi tạo đối tượng DbContext để tương tác với cơ sở dữ liệu
-
         public fLogin()
         {
             InitializeComponent();
@@ -28,12 +27,12 @@ namespace BANTHUOC
                 // Kiểm tra role_id và mở form tương ứng
                 if (employee.role_id == 1)
                 {
-                    fMain mainForm = new fMain();
+                    fMain mainForm = new fMain(employee); // Truyền đối tượng employee vào form chính
                     mainForm.Show();
                 }
                 else
                 {
-                    fMainForEmp mainForEmpForm = new fMainForEmp();
+                    fMainForEmp mainForEmpForm = new fMainForEmp(employee); // Truyền đối tượng employee vào form chính
                     mainForEmpForm.Show();
                 }
 
@@ -50,14 +49,12 @@ namespace BANTHUOC
             // Truy vấn email 
             var employee = db.NhanVien.FirstOrDefault(e => e.staff_email == email);
 
-            if (employee != null)
+            if (employee != null && employee.password == password)
             {
-                if (employee.password == password)
-                {
-                    return employee;
-                }
+                return employee;
             }
             return null;
         }
     }
+
 }

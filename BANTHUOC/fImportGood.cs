@@ -11,20 +11,20 @@ using System.Windows.Forms;
 
 namespace BANTHUOC
 {
-    public partial class fReceivedGood : Form
+    public partial class fImportGood : Form
     {
         // Biến toàn cục để lưu trữ hóa đơn nhập hàng hiện tại
         private ImportInvoice currentImportInvoice = null;
         private EFDbContext db = new EFDbContext();
         private long import_invoice_id;
 
-        public fReceivedGood()
+        public fImportGood()
         {
             InitializeComponent();
         }
 
 
-        private void fReceivedGood_Load(object sender, EventArgs e)
+        private void fImportGood_Load(object sender, EventArgs e)
         {
             using (var db = new EFDbContext())
             {
@@ -126,7 +126,7 @@ namespace BANTHUOC
                     currentImportInvoice = new ImportInvoice
                     {
                         total_amount = 0, // Tạm thời gán tổng tiền là 0
-                        creat_at = DateTime.Now,
+                        create_at = DateTime.Now,
                         employee_id = 1
                     };
                     db.HoaDonNhapHang.Add(currentImportInvoice);

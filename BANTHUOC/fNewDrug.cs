@@ -124,7 +124,7 @@ namespace BANTHUOC
                     ImportInvoice importInvoice = new ImportInvoice
                     {
                         total_amount = totalAmount, // Tạm thời gán tổng tiền là 0
-                        creat_at = DateTime.Now,
+                        create_at = DateTime.Now,
                         employee_id = 1
                     };
 
