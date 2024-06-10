@@ -39,7 +39,7 @@ namespace BANTHUOC
             
             try
             {
-                //Tạo khách hàng mới
+                //Tạo loại thuốc mới
                 drugCategory = new DrugCategory(); //Tạo một thể hiện (đối tượng) khách hàng mới
                 drugCategory.category_name = txtName.Text;
                 drugCategory.description = txtDescription.Text;

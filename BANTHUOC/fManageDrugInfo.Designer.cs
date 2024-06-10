@@ -41,7 +41,6 @@
             dongGoi = new RichTextBox();
             nhaCungCap = new RichTextBox();
             tacDungPhu = new RichTextBox();
-            btnClose = new Button();
             label13 = new Label();
             label12 = new Label();
             label9 = new Label();
@@ -63,6 +62,7 @@
             giaBan = new RichTextBox();
             label14 = new Label();
             txtImageFile = new TextBox();
+            btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -166,15 +166,6 @@
             tacDungPhu.TabIndex = 131;
             tacDungPhu.Text = "";
             // 
-            // btnClose
-            // 
-            btnClose.Location = new Point(990, 834);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(111, 55);
-            btnClose.TabIndex = 130;
-            btnClose.Text = "Đóng";
-            btnClose.UseVisualStyleBackColor = true;
-            // 
             // label13
             // 
             label13.AutoSize = true;
@@ -261,6 +252,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.ErrorImage = Properties.Resources.no_image;
             pictureBox1.Image = Properties.Resources.no_image;
             pictureBox1.Location = new Point(117, 205);
@@ -342,11 +334,25 @@
             txtImageFile.Size = new Size(262, 27);
             txtImageFile.TabIndex = 160;
             // 
+            // btnClose
+            // 
+            btnClose.BackgroundImage = Properties.Resources.thoat;
+            btnClose.BackgroundImageLayout = ImageLayout.Zoom;
+            btnClose.Location = new Point(966, 864);
+            btnClose.Margin = new Padding(2);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(116, 61);
+            btnClose.TabIndex = 163;
+            btnClose.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click_1;
+            // 
             // fManageDrugInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1296, 1055);
+            Controls.Add(btnClose);
             Controls.Add(label14);
             Controls.Add(txtImageFile);
             Controls.Add(giaBan);
@@ -368,7 +374,6 @@
             Controls.Add(dongGoi);
             Controls.Add(nhaCungCap);
             Controls.Add(tacDungPhu);
-            Controls.Add(btnClose);
             Controls.Add(label13);
             Controls.Add(label12);
             Controls.Add(label9);
@@ -402,7 +407,6 @@
         private RichTextBox dongGoi;
         private RichTextBox nhaCungCap;
         private RichTextBox tacDungPhu;
-        private Button btnClose;
         private Label label13;
         private Label label12;
         private Label label9;
@@ -424,5 +428,6 @@
         private RichTextBox giaBan;
         private Label label14;
         private TextBox txtImageFile;
+        private Button btnClose;
     }
 }

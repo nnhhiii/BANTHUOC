@@ -67,6 +67,7 @@ namespace BANTHUOC
                 f.MdiParent = this.MdiParent;
                 f.Show();
             }
+
         }
     }
 }

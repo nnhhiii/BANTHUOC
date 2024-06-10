@@ -92,6 +92,7 @@
             thongtinThuoc.Text = "Thông tin thuốc";
             thongtinThuoc.TextAlign = ContentAlignment.BottomCenter;
             thongtinThuoc.UseVisualStyleBackColor = true;
+            thongtinThuoc.Click += thongtinThuoc_Click;
             // 
             // banthuoc
             // 

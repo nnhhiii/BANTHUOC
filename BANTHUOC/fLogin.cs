@@ -44,6 +44,7 @@ namespace BANTHUOC
             }
         }
 
+
         private Staff AuthenticateUser(string email, string password)
         {
             // Truy vấn email 
@@ -54,6 +55,21 @@ namespace BANTHUOC
                 return employee;
             }
             return null;
+        }
+
+        private void cbPass_CheckedChanged(object sender, EventArgs e)
+        {
+            // Kiểm tra trạng thái của checkbox
+            if (cbPass.Checked)
+            {
+                // Hiển thị mật khẩu
+                txtPassword.PasswordChar = '\0'; // Hiển thị mật khẩu dưới dạng văn bản thông thường
+            }
+            else
+            {
+                // Ẩn mật khẩu
+                txtPassword.PasswordChar = '*'; // Sử dụng ký tự * để ẩn mật khẩu
+            }
         }
     }
 

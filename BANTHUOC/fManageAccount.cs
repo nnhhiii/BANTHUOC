@@ -47,6 +47,9 @@ namespace BANTHUOC
 
                 // Kiểm tra và hiển thị chức vụ của nhân viên
                 chucVu.Text = staff.role_id == 1 ? "Quản lý" : "Nhân viên";
+
+                txtImageFile.Text = string.IsNullOrWhiteSpace(staff.staff_image) ? null : Utility.ImagePath + staff.staff_image;
+                pictureBox1.ImageLocation = txtImageFile.Text; //Hiển thị hình
             }
             else
             {

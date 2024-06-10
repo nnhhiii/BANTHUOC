@@ -20,11 +20,6 @@ namespace BANTHUOC
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void fManageDrugInfo_Load(object sender, EventArgs e)
         {
             tenThuoc.DisplayMember = "drug_name";
@@ -62,8 +57,19 @@ namespace BANTHUOC
                 hanSuDung.Text = drug.expiry_date.ToShortDateString();
                 txtImageFile.Text = string.IsNullOrWhiteSpace(drug.image) ? null : Utility.ImagePath + drug.image;
                 pictureBox1.ImageLocation = txtImageFile.Text; //Hiển thị hình
+
+                var importPrice = db.CTHDNhapHang.FirstOrDefault(c => c.drug_id == drug.id)?.import_price;
+                if (importPrice != null)
+                {
+                    giaNhap.Text = importPrice.Value.ToString();
+                }
             }
 
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

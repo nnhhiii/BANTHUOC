@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using BANTHUOC.Models; //truy xuất đến các lớp: Customer,…
 using System.Configuration;
-using System.Data;
+
 namespace BANTHUOC
 {
     internal class EFDbContext : DbContext
@@ -16,12 +16,14 @@ namespace BANTHUOC
         public DbSet<ImportDetail> CTHDNhapHang { get; set; }
         public DbSet<Invoice> HoaDonBanHang { get; set; }
         public DbSet<InvoiceDetail> CTHDBanHang { get; set; }
-        public DbSet<Role> Role { get; set; }
+        public DbSet<Role> VaiTro { get; set; }
 
         public void ConfigureServices(IServiceCollection services)
-        => services.AddDbContext<EFDbContext>();
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-    }
+            => services.AddDbContext<EFDbContext>();
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            => optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+
+        
+    }
 }

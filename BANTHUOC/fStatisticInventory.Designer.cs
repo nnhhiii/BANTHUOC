@@ -37,6 +37,7 @@
             soluongnhap = new DataGridViewTextBoxColumn();
             soluongban = new DataGridViewTextBoxColumn();
             soluongton = new DataGridViewTextBoxColumn();
+            btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -117,11 +118,25 @@
             soluongton.Name = "soluongton";
             soluongton.Width = 125;
             // 
+            // btnClose
+            // 
+            btnClose.BackgroundImage = Properties.Resources.thoat;
+            btnClose.BackgroundImageLayout = ImageLayout.Zoom;
+            btnClose.Location = new Point(1050, 696);
+            btnClose.Margin = new Padding(2);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(116, 61);
+            btnClose.TabIndex = 85;
+            btnClose.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
             // fStatisticInventory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1247, 792);
+            Controls.Add(btnClose);
             Controls.Add(dataGridView1);
             Name = "fStatisticInventory";
             Text = "Thống kê tồn kho";
@@ -142,5 +157,6 @@
         private DataGridViewTextBoxColumn soluongnhap;
         private DataGridViewTextBoxColumn soluongban;
         private DataGridViewTextBoxColumn soluongton;
+        private Button btnClose;
     }
 }

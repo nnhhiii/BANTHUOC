@@ -4,7 +4,7 @@ namespace BANTHUOC.Models
 {
     public class Role
     {
-        public long Id { get; set; }
-        public string RoleName { get; set; }
+        public long id { get; set; }
+        public string role_name { get; set; }
     }
 }

@@ -101,6 +101,7 @@
             ID.HeaderText = "ID";
             ID.MinimumWidth = 6;
             ID.Name = "ID";
+            ID.Width = 125;
             // 
             // SupplierName
             // 
@@ -140,6 +141,8 @@
             Edit.MinimumWidth = 10;
             Edit.Name = "Edit";
             Edit.Text = "Sửa";
+            Edit.UseColumnTextForButtonValue = true;
+            Edit.Width = 125;
             // 
             // Delete
             // 
@@ -147,6 +150,8 @@
             Delete.MinimumWidth = 10;
             Delete.Name = "Delete";
             Delete.Text = "Xóa";
+            Delete.UseColumnTextForButtonValue = true;
+            Delete.Width = 125;
             // 
             // fManageSupplier
             // 

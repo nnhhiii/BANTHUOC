@@ -64,9 +64,12 @@
             pictureBox1 = new PictureBox();
             toolTip1 = new ToolTip(components);
             openFileDialog1 = new OpenFileDialog();
+            giaNhap = new NumericUpDown();
+            label15 = new Label();
             ((System.ComponentModel.ISupportInitialize)soLuongTheoDonViBan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)giaBan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)giaNhap).BeginInit();
             SuspendLayout();
             // 
             // btnDelete
@@ -116,14 +119,14 @@
             // 
             // soLuongTheoDonViBan
             // 
-            soLuongTheoDonViBan.Location = new Point(678, 444);
+            soLuongTheoDonViBan.Location = new Point(678, 516);
             soLuongTheoDonViBan.Name = "soLuongTheoDonViBan";
             soLuongTheoDonViBan.Size = new Size(322, 27);
             soLuongTheoDonViBan.TabIndex = 101;
             // 
             // giaBan
             // 
-            giaBan.Location = new Point(678, 321);
+            giaBan.Location = new Point(678, 393);
             giaBan.Name = "giaBan";
             giaBan.Size = new Size(322, 27);
             giaBan.TabIndex = 100;
@@ -131,7 +134,7 @@
             // donViBan
             // 
             donViBan.FormattingEnabled = true;
-            donViBan.Location = new Point(678, 380);
+            donViBan.Location = new Point(678, 452);
             donViBan.Name = "donViBan";
             donViBan.Size = new Size(322, 28);
             donViBan.TabIndex = 98;
@@ -187,7 +190,7 @@
             // hanSuDung
             // 
             hanSuDung.Format = DateTimePickerFormat.Short;
-            hanSuDung.Location = new Point(678, 516);
+            hanSuDung.Location = new Point(678, 588);
             hanSuDung.Name = "hanSuDung";
             hanSuDung.Size = new Size(322, 27);
             hanSuDung.TabIndex = 99;
@@ -250,7 +253,7 @@
             // 
             // label11
             // 
-            label11.Location = new Point(492, 436);
+            label11.Location = new Point(492, 508);
             label11.Name = "label11";
             label11.Size = new Size(134, 54);
             label11.TabIndex = 85;
@@ -259,7 +262,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(492, 518);
+            label10.Location = new Point(492, 590);
             label10.Name = "label10";
             label10.Size = new Size(93, 20);
             label10.TabIndex = 84;
@@ -303,7 +306,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(492, 380);
+            label5.Location = new Point(492, 452);
             label5.Name = "label5";
             label5.Size = new Size(81, 20);
             label5.TabIndex = 79;
@@ -312,7 +315,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(492, 321);
+            label4.Location = new Point(492, 393);
             label4.Name = "label4";
             label4.Size = new Size(60, 20);
             label4.TabIndex = 78;
@@ -358,11 +361,30 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // giaNhap
+            // 
+            giaNhap.Location = new Point(678, 325);
+            giaNhap.Maximum = new decimal(new int[] { 276447232, 23283, 0, 0 });
+            giaNhap.Name = "giaNhap";
+            giaNhap.Size = new Size(322, 27);
+            giaNhap.TabIndex = 120;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(492, 325);
+            label15.Name = "label15";
+            label15.Size = new Size(68, 20);
+            label15.TabIndex = 119;
+            label15.Text = "Giá nhập";
+            // 
             // fEditDrug
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1076, 737);
+            Controls.Add(giaNhap);
+            Controls.Add(label15);
             Controls.Add(btnDelete);
             Controls.Add(loaiThuoc);
             Controls.Add(label14);
@@ -402,6 +424,7 @@
             ((System.ComponentModel.ISupportInitialize)soLuongTheoDonViBan).EndInit();
             ((System.ComponentModel.ISupportInitialize)giaBan).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)giaNhap).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -443,5 +466,7 @@
         private PictureBox pictureBox1;
         private ToolTip toolTip1;
         private OpenFileDialog openFileDialog1;
+        private NumericUpDown giaNhap;
+        private Label label15;
     }
 }

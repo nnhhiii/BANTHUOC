@@ -6,11 +6,13 @@ namespace BANTHUOC
     public partial class fMain : Form
     {
         private Staff loggedInEmployee;
+
         public fMain(Staff employee)
         {
             InitializeComponent();
             this.loggedInEmployee = employee;
         }
+   
 
         private void btn_nv_Click(object sender, EventArgs e)
         {
@@ -55,7 +57,6 @@ namespace BANTHUOC
             f.Show();
         }
 
-        
 
         private void btn_thongke_nhap_Click(object sender, EventArgs e)
         {

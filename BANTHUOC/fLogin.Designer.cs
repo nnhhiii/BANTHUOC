@@ -46,6 +46,7 @@
             cbPass.TabIndex = 0;
             cbPass.Text = "Show Password";
             cbPass.UseVisualStyleBackColor = true;
+            cbPass.CheckedChanged += cbPass_CheckedChanged;
             // 
             // btLogin
             // 
@@ -91,6 +92,7 @@
             txtPassword.Location = new Point(73, 249);
             txtPassword.Margin = new Padding(2);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(242, 27);
             txtPassword.TabIndex = 6;
             // 

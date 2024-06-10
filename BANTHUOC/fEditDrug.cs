@@ -15,16 +15,15 @@ namespace BANTHUOC
         {
             InitializeComponent();
             this.id = id;
-            this.btnDelete.Click += new System.EventHandler(btnDelete_Click);
         }
 
         private void fEditDrug_Load(object sender, EventArgs e)
         {
-                drug = db.Thuoc
-                    .Include(d => d.DrugCategory)
-                    .Include(p => p.Supplier)
-                    .Include(d => d.Unit)
-                    .Single(d => d.id == id);
+            drug = db.Thuoc
+                .Include(d => d.DrugCategory)
+                .Include(p => p.Supplier)
+                .Include(d => d.Unit)
+                .Single(d => d.id == id);
 
             if (drug == null)
             {
@@ -45,6 +44,12 @@ namespace BANTHUOC
             hanSuDung.Text = drug.expiry_date.ToShortDateString();
             txtImageFile.Text = string.IsNullOrWhiteSpace(drug.image) ? null : Utility.ImagePath + drug.image;
             pictureBox1.ImageLocation = txtImageFile.Text; //Hiển thị hình
+
+            var importPrice = db.CTHDNhapHang.FirstOrDefault(c => c.drug_id == drug.id)?.import_price;
+            if (importPrice != null)
+            {
+                giaNhap.Text = importPrice.Value.ToString();
+            }
 
             //hiện combobox loại thuốc
             loaiThuoc.DisplayMember = "category_name";
@@ -68,7 +73,6 @@ namespace BANTHUOC
             nhaCungCap.Text = drug.Supplier.supplier_name;
 
 
-
             // đơn vị tính
             donViBan.DisplayMember = "unit_name";
             donViBan.ValueMember = "id";
@@ -79,55 +83,13 @@ namespace BANTHUOC
             }).ToList();
             donViBan.Text = drug.Unit.unit_name;
 
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Tìm thuốc với ID tương ứng
-                Drug drug = db.Thuoc.SingleOrDefault(c => c.id == id);
-
-                // Kiểm tra nếu thuốc không tồn tại
-                if (drug == null)
-                {
-                    MessageBox.Show("Không tìm thấy thông tin thuốc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Xác nhận xóa
-                var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa thông tin thuốc này?",
-                                                    "Xác nhận xóa",
-                                                    MessageBoxButtons.YesNo,
-                                                    MessageBoxIcon.Question);
-
-                if (confirmResult == DialogResult.Yes)
-                {
-                    // Xóa thông tin thuốc khỏi cơ sở dữ liệu
-                    db.Thuoc.Remove(drug);
-                    db.SaveChanges();
-
-                    // Thông báo và đóng form
-                    MessageBox.Show("Đã xóa thông tin thuốc thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DrugDeleted?.Invoke();
-                    Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi, chưa xóa được. Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-        }
-    
-
-    private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tenThuoc.Text))
             {
@@ -222,6 +184,43 @@ namespace BANTHUOC
             }
         }
 
-        
+        /*private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Tìm thuốc với ID tương ứng
+                Drug drug = db.Thuoc.SingleOrDefault(c => c.id == id);
+
+                // Kiểm tra nếu thuốc không tồn tại
+                if (drug == null)
+                {
+                    MessageBox.Show("Không tìm thấy thông tin thuốc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Xác nhận xóa
+                var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa thông tin thuốc này?",
+                                                    "Xác nhận xóa",
+                                                    MessageBoxButtons.YesNo,
+                                                    MessageBoxIcon.Question);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Xóa thông tin thuốc khỏi cơ sở dữ liệu
+                    db.Thuoc.Remove(drug);
+                    db.SaveChanges();
+
+                    // Thông báo và đóng form
+                    MessageBox.Show("Đã xóa thông tin thuốc thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DrugDeleted?.Invoke();
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi, chưa xóa được. Error: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }*/
     }
 }

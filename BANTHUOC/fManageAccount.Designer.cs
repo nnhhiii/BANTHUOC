@@ -43,16 +43,18 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            label14 = new Label();
+            txtImageFile = new TextBox();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // gioiTinh
             // 
-            gioiTinh.Location = new Point(484, 338);
+            gioiTinh.Location = new Point(483, 338);
             gioiTinh.Margin = new Padding(2);
             gioiTinh.Name = "gioiTinh";
-            gioiTinh.Size = new Size(171, 27);
+            gioiTinh.Size = new Size(225, 27);
             gioiTinh.TabIndex = 54;
             // 
             // label8
@@ -67,7 +69,7 @@
             // 
             // email
             // 
-            email.Location = new Point(759, 420);
+            email.Location = new Point(759, 405);
             email.Margin = new Padding(2);
             email.Name = "email";
             email.Size = new Size(158, 27);
@@ -83,24 +85,24 @@
             // 
             // diaChi
             // 
-            diaChi.Location = new Point(484, 501);
+            diaChi.Location = new Point(484, 500);
             diaChi.Margin = new Padding(2);
             diaChi.Name = "diaChi";
-            diaChi.Size = new Size(171, 27);
+            diaChi.Size = new Size(319, 27);
             diaChi.TabIndex = 48;
             // 
             // ngaySinh
             // 
             ngaySinh.AcceptsReturn = true;
-            ngaySinh.Location = new Point(484, 420);
+            ngaySinh.Location = new Point(483, 405);
             ngaySinh.Margin = new Padding(2);
             ngaySinh.Name = "ngaySinh";
-            ngaySinh.Size = new Size(171, 27);
+            ngaySinh.Size = new Size(225, 27);
             ngaySinh.TabIndex = 47;
             // 
             // chucVu
             // 
-            chucVu.Location = new Point(759, 264);
+            chucVu.Location = new Point(759, 267);
             chucVu.Margin = new Padding(2);
             chucVu.Name = "chucVu";
             chucVu.Size = new Size(158, 27);
@@ -108,20 +110,20 @@
             // 
             // hoTen
             // 
-            hoTen.Location = new Point(484, 264);
+            hoTen.Location = new Point(484, 267);
             hoTen.Margin = new Padding(2);
             hoTen.Name = "hoTen";
-            hoTen.Size = new Size(171, 27);
+            hoTen.Size = new Size(224, 27);
             hoTen.TabIndex = 45;
             // 
             // thoat
             // 
             thoat.BackgroundImage = Properties.Resources.thoat;
             thoat.BackgroundImageLayout = ImageLayout.Zoom;
-            thoat.Location = new Point(615, 550);
+            thoat.Location = new Point(695, 584);
             thoat.Margin = new Padding(2);
             thoat.Name = "thoat";
-            thoat.Size = new Size(188, 41);
+            thoat.Size = new Size(140, 70);
             thoat.TabIndex = 44;
             thoat.UseVisualStyleBackColor = true;
             thoat.Click += thoat_Click;
@@ -186,21 +188,40 @@
             label1.TabIndex = 37;
             label1.Text = "Họ và tên";
             // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(43, 505);
+            label14.Name = "label14";
+            label14.Size = new Size(87, 20);
+            label14.TabIndex = 114;
+            label14.Text = "Tập tin hình";
+            // 
+            // txtImageFile
+            // 
+            txtImageFile.Location = new Point(156, 502);
+            txtImageFile.Name = "txtImageFile";
+            txtImageFile.Size = new Size(248, 27);
+            txtImageFile.TabIndex = 112;
+            // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.account;
-            pictureBox1.Location = new Point(114, 233);
-            pictureBox1.Margin = new Padding(2);
+            pictureBox1.ErrorImage = Properties.Resources.account;
+            pictureBox1.Image = Properties.Resources.account;
+            pictureBox1.Location = new Point(53, 200);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(287, 294);
-            pictureBox1.TabIndex = 36;
+            pictureBox1.Size = new Size(375, 284);
+            pictureBox1.TabIndex = 111;
             pictureBox1.TabStop = false;
             // 
             // fManageAccount
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1205, 737);
+            ClientSize = new Size(1249, 804);
+            Controls.Add(label14);
+            Controls.Add(txtImageFile);
+            Controls.Add(pictureBox1);
             Controls.Add(gioiTinh);
             Controls.Add(label8);
             Controls.Add(email);
@@ -216,7 +237,6 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(pictureBox1);
             Margin = new Padding(2);
             Name = "fManageAccount";
             Text = "Thông tin tài khoản";
@@ -228,6 +248,7 @@
         }
 
         #endregion
+
 
         private TextBox gioiTinh;
         private Label label8;
@@ -244,6 +265,8 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private Label label14;
+        private TextBox txtImageFile;
         private PictureBox pictureBox1;
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BANTHUOC.Models;
 
 namespace BANTHUOC
 {
@@ -39,11 +40,21 @@ namespace BANTHUOC
 
         private void taikhoan_Click(object sender, EventArgs e)
         {
-            if (Utility.IsOpeningForm("fManagementAccount"))
+            if (Utility.IsOpeningForm("fManageAccount"))
                 return;
             fManageAccount f = new fManageAccount(loggedInEmployee);
             f.MdiParent = this;
             f.Show();
         }
+
+        private void thongtinThuoc_Click(object sender, EventArgs e)
+        {
+            if (Utility.IsOpeningForm("fManageDrugInfo"))
+                return;
+            fManageDrugInfo f = new fManageDrugInfo();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }
+

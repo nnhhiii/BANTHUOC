@@ -90,9 +90,9 @@ namespace BANTHUOC
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tenThuoc.Text))
+            if (tenThuoc.SelectedIndex == -1)
             {
-                toolTip1.Show("Hãy chọn thuốc?", tenThuoc, 0, 0, 1000);
+                toolTip1.Show("Hãy chọn thuốc", tenThuoc, 0, 0, 1000);
                 tenThuoc.Focus();
                 return;
             }

@@ -74,7 +74,7 @@ namespace BANTHUOC
             tabPage1.Controls.Add(btn_nv);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3, 3, 3, 3);
+            tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(1360, 130);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Quản lý";
@@ -202,7 +202,7 @@ namespace BANTHUOC
             tabPage2.Controls.Add(banthuoc);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3, 3, 3, 3);
+            tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(1360, 130);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Bán hàng";

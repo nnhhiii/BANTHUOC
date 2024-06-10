@@ -132,10 +132,10 @@
             // 
             btnClose.BackgroundImage = Properties.Resources.thoat;
             btnClose.BackgroundImageLayout = ImageLayout.Zoom;
-            btnClose.Location = new Point(1141, 765);
+            btnClose.Location = new Point(1124, 765);
             btnClose.Margin = new Padding(2);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(99, 51);
+            btnClose.Size = new Size(116, 61);
             btnClose.TabIndex = 84;
             btnClose.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnClose.UseVisualStyleBackColor = true;
