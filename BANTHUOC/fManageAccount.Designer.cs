@@ -206,6 +206,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.ErrorImage = Properties.Resources.account;
             pictureBox1.Image = Properties.Resources.account;
             pictureBox1.Location = new Point(53, 200);

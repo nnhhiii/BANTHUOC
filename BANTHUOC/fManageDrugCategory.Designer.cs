@@ -35,6 +35,10 @@
             btnEdit = new DataGridViewButtonColumn();
             btnDelete = new DataGridViewButtonColumn();
             btnCategoryAdd = new Button();
+            label1 = new Label();
+            txtName = new TextBox();
+            lblFind = new Label();
+            btnFind = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -42,7 +46,7 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { category_id, category_name, description, btnEdit, btnDelete });
-            dataGridView1.Location = new Point(12, 302);
+            dataGridView1.Location = new Point(59, 309);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1380, 480);
@@ -97,27 +101,72 @@
             // 
             // btnCategoryAdd
             // 
-            btnCategoryAdd.Location = new Point(1169, 216);
+            btnCategoryAdd.Location = new Point(128, 226);
             btnCategoryAdd.Name = "btnCategoryAdd";
-            btnCategoryAdd.Size = new Size(166, 58);
+            btnCategoryAdd.Size = new Size(130, 54);
             btnCategoryAdd.TabIndex = 1;
-            btnCategoryAdd.Text = "Thêm loại thuốc mới";
+            btnCategoryAdd.Text = "Nhập mới";
             btnCategoryAdd.UseVisualStyleBackColor = true;
             btnCategoryAdd.Click += btnCategoryAdd_Click;
             // 
-            // fDrugCategoryManagement
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Green;
+            label1.Location = new Point(551, 183);
+            label1.Name = "label1";
+            label1.Size = new Size(282, 35);
+            label1.TabIndex = 11;
+            label1.Text = "QUẢN LÝ LOẠI THUỐC";
+            // 
+            // txtName
+            // 
+            txtName.Location = new Point(981, 253);
+            txtName.Margin = new Padding(2);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(183, 27);
+            txtName.TabIndex = 14;
+            // 
+            // lblFind
+            // 
+            lblFind.AutoSize = true;
+            lblFind.Location = new Point(849, 260);
+            lblFind.Margin = new Padding(2, 0, 2, 0);
+            lblFind.Name = "lblFind";
+            lblFind.Size = new Size(115, 20);
+            lblFind.TabIndex = 13;
+            lblFind.Text = "Nhập loại thuốc";
+            // 
+            // btnFind
+            // 
+            btnFind.Location = new Point(1178, 248);
+            btnFind.Margin = new Padding(2);
+            btnFind.Name = "btnFind";
+            btnFind.Size = new Size(102, 37);
+            btnFind.TabIndex = 12;
+            btnFind.Text = "Tìm kiếm";
+            btnFind.UseVisualStyleBackColor = true;
+            btnFind.Click += btnFind_Click;
+            // 
+            // fManageDrugCategory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1382, 670);
+            Controls.Add(txtName);
+            Controls.Add(lblFind);
+            Controls.Add(btnFind);
+            Controls.Add(label1);
             Controls.Add(btnCategoryAdd);
             Controls.Add(dataGridView1);
-            Name = "fDrugCategoryManagement";
+            Name = "fManageDrugCategory";
             Text = "Quản Lý Loại Thuốc";
             WindowState = FormWindowState.Maximized;
             Activated += fDrugCategoryManagement_Activated;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -129,5 +178,9 @@
         private DataGridViewTextBoxColumn description;
         private DataGridViewButtonColumn btnEdit;
         private DataGridViewButtonColumn btnDelete;
+        private Label label1;
+        private TextBox txtName;
+        private Label lblFind;
+        private Button btnFind;
     }
 }

@@ -10,7 +10,6 @@ namespace BANTHUOC
         private Drug drug;
         private long id;
         private EFDbContext db = new EFDbContext();
-        public event Action DrugDeleted;
         public fEditDrug(long id)
         {
             InitializeComponent();

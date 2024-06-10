@@ -39,6 +39,7 @@
             ImportPrice = new DataGridViewTextBoxColumn();
             ExpiryDate = new DataGridViewTextBoxColumn();
             btnClose = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -137,11 +138,23 @@
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Green;
+            label1.Location = new Point(517, 139);
+            label1.Name = "label1";
+            label1.Size = new Size(322, 35);
+            label1.TabIndex = 85;
+            label1.Text = "CHI TIẾT HÓA ĐƠN NHẬP";
+            // 
             // fStatisticImportDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1329, 907);
+            Controls.Add(label1);
             Controls.Add(btnClose);
             Controls.Add(dataGridView1);
             Name = "fStatisticImportDetail";
@@ -149,6 +162,7 @@
             Load += fStatisticImportDetail_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -164,5 +178,6 @@
         private DataGridViewTextBoxColumn ImportPrice;
         private DataGridViewTextBoxColumn ExpiryDate;
         private Button btnClose;
+        private Label label1;
     }
 }

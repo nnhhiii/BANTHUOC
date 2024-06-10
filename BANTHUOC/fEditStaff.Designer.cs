@@ -262,6 +262,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.ErrorImage = Properties.Resources.no_image;
             pictureBox1.Image = Properties.Resources.account;
             pictureBox1.Location = new Point(95, 257);

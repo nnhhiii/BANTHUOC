@@ -70,5 +70,13 @@ namespace BANTHUOC
                 f.Show();
             }
         }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            using (var db = new EFDbContext())
+            {
+                dataGridView1.DataSource = db.LoaiDuocPham.Where(c => c.category_name.Contains(txtName.Text)).ToList();
+            }
+        }
     }
 }

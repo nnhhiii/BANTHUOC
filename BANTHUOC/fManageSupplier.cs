@@ -76,5 +76,10 @@ namespace BANTHUOC
                 dataGridView1.DataSource = db.NhaCungCap.ToList();
             }
         }
+
+        private void fManageSupplier_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

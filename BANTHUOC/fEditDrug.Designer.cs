@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            btnDelete = new Button();
             loaiThuoc = new ComboBox();
             label14 = new Label();
             btBrowse = new Button();
@@ -71,17 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)giaNhap).BeginInit();
             SuspendLayout();
-            // 
-            // btnDelete
-            // 
-            btnDelete.Image = Properties.Resources.delete;
-            btnDelete.Location = new Point(575, 654);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(138, 55);
-            btnDelete.TabIndex = 106;
-            btnDelete.Text = "Xóa thuốc";
-            btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnDelete.UseVisualStyleBackColor = true;
             // 
             // loaiThuoc
             // 
@@ -385,7 +373,6 @@
             ClientSize = new Size(1076, 737);
             Controls.Add(giaNhap);
             Controls.Add(label15);
-            Controls.Add(btnDelete);
             Controls.Add(loaiThuoc);
             Controls.Add(label14);
             Controls.Add(btBrowse);
@@ -430,8 +417,6 @@
         }
 
         #endregion
-
-        private Button btnDelete;
         private ComboBox loaiThuoc;
         private Label label14;
         private Button btBrowse;

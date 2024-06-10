@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            btnFind = new Button();
-            lblFind = new Label();
-            txtName = new TextBox();
-            btnAdd = new Button();
             ID = new DataGridViewTextBoxColumn();
             SupplierName = new DataGridViewTextBoxColumn();
             Description = new DataGridViewTextBoxColumn();
@@ -40,6 +36,11 @@
             PhoneNumber = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
+            btnFind = new Button();
+            lblFind = new Label();
+            txtName = new TextBox();
+            btnAdd = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -47,53 +48,13 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, SupplierName, Description, Address, PhoneNumber, Edit, Delete });
-            dataGridView1.Location = new Point(9, 315);
+            dataGridView1.Location = new Point(48, 310);
             dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.Size = new Size(1320, 432);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // btnFind
-            // 
-            btnFind.Location = new Point(795, 262);
-            btnFind.Margin = new Padding(2);
-            btnFind.Name = "btnFind";
-            btnFind.Size = new Size(79, 33);
-            btnFind.TabIndex = 1;
-            btnFind.Text = "Tìm kiếm";
-            btnFind.UseVisualStyleBackColor = true;
-            btnFind.Click += btnFind_Click;
-            // 
-            // lblFind
-            // 
-            lblFind.AutoSize = true;
-            lblFind.Location = new Point(488, 269);
-            lblFind.Margin = new Padding(2, 0, 2, 0);
-            lblFind.Name = "lblFind";
-            lblFind.Size = new Size(100, 20);
-            lblFind.TabIndex = 2;
-            lblFind.Text = "Nhà cung cấp";
-            // 
-            // txtName
-            // 
-            txtName.Location = new Point(601, 265);
-            txtName.Margin = new Padding(2);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(162, 27);
-            txtName.TabIndex = 3;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Location = new Point(9, 265);
-            btnAdd.Margin = new Padding(2);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(92, 29);
-            btnAdd.TabIndex = 4;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
             // 
             // ID
             // 
@@ -153,11 +114,63 @@
             Delete.UseColumnTextForButtonValue = true;
             Delete.Width = 125;
             // 
+            // btnFind
+            // 
+            btnFind.Location = new Point(1089, 257);
+            btnFind.Margin = new Padding(2);
+            btnFind.Name = "btnFind";
+            btnFind.Size = new Size(102, 37);
+            btnFind.TabIndex = 1;
+            btnFind.Text = "Tìm kiếm";
+            btnFind.UseVisualStyleBackColor = true;
+            btnFind.Click += btnFind_Click;
+            // 
+            // lblFind
+            // 
+            lblFind.AutoSize = true;
+            lblFind.Location = new Point(777, 269);
+            lblFind.Margin = new Padding(2, 0, 2, 0);
+            lblFind.Name = "lblFind";
+            lblFind.Size = new Size(100, 20);
+            lblFind.TabIndex = 2;
+            lblFind.Text = "Nhà cung cấp";
+            // 
+            // txtName
+            // 
+            txtName.Location = new Point(892, 262);
+            txtName.Margin = new Padding(2);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(183, 27);
+            txtName.TabIndex = 3;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(81, 238);
+            btnAdd.Margin = new Padding(2);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(124, 51);
+            btnAdd.TabIndex = 4;
+            btnAdd.Text = "Nhập mới";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Green;
+            label1.Location = new Point(463, 180);
+            label1.Name = "label1";
+            label1.Size = new Size(323, 35);
+            label1.TabIndex = 10;
+            label1.Text = "QUẢN LÝ NHÀ CUNG CẤP";
+            // 
             // fManageSupplier
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1325, 542);
+            ClientSize = new Size(1325, 699);
+            Controls.Add(label1);
             Controls.Add(btnAdd);
             Controls.Add(txtName);
             Controls.Add(lblFind);
@@ -168,6 +181,7 @@
             Text = "QUẢN LÝ NHÀ CUNG CẤP";
             WindowState = FormWindowState.Maximized;
             Activated += fManageSupplier_Activated;
+            Load += fManageSupplier_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -187,5 +201,6 @@
         private DataGridViewTextBoxColumn PhoneNumber;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
+        private Label label1;
     }
 }

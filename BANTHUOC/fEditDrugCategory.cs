@@ -22,11 +22,6 @@ namespace BANTHUOC
             this.category_id = category_id;
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void fEditDrugCategory_Load(object sender, EventArgs e)
         {
             drugCategory = db.LoaiDuocPham.Single(p => p.category_id == category_id);
@@ -55,6 +50,11 @@ namespace BANTHUOC
                 toolTip1.Show("Lưu thất bại? Error: " + ex.Message, btnSave, 0, 0, 1000);
             }
             txtName.Focus();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -28,17 +28,23 @@ namespace BANTHUOC
         }
 
 
-        private void DisplayDrugData(long categoryId)
+        private void DisplayDrugData(long categoryId, string drugName = "")
         {
             flowLayoutPanel1.Controls.Clear();
             using (var db = new EFDbContext())
             {
-                var drugs = db.Thuoc
-                    .Include(t => t.DrugCategory)
-                    .Where(t => t.category_id == categoryId)
-                    .ToList();
+                var drugsQuery = db.Thuoc
+                .Include(t => t.DrugCategory)
+                .Where(t => t.category_id == categoryId);
 
-                int y = 0; // Initial y-coordinate for the first panel
+                if (!string.IsNullOrEmpty(drugName))
+                {
+                    drugsQuery = drugsQuery.Where(t => t.drug_name.Contains(drugName));
+                }
+
+                var drugs = drugsQuery.ToList();
+
+                int y = 0;
                 foreach (var drug in drugs)
                 {
                     Panel panel = new Panel();
@@ -46,8 +52,6 @@ namespace BANTHUOC
                     panel.Size = new Size(530, 270);
                     panel.Location = new Point(12, y);
                     panel.Margin = new Padding(15);
-
-
                     //
                     // ảnh
                     //
@@ -114,9 +118,6 @@ namespace BANTHUOC
                     dongGoiLabel.Location = new Point(267, 181);
                     dongGoiLabel.Text = drug.packing;
 
-
-
-
                     Label label4 = new Label();
                     label4.Location = new Point(179, 180);
                     label4.Size = new Size(78, 50);
@@ -161,7 +162,7 @@ namespace BANTHUOC
 
                     flowLayoutPanel1.Controls.Add(panel);
 
-                    y += panel.Size.Height + panel.Margin.Bottom; // Increment y-coordinate for the next panel
+                    y += panel.Size.Height + panel.Margin.Bottom;
                 }
             }
         }
@@ -171,13 +172,6 @@ namespace BANTHUOC
                 return;
             fEditDrug f = new fEditDrug(drugId);
             f.Show();
-
-            // Lắng nghe sự kiện DrugDeleted
-            f.DrugDeleted += () =>
-            {
-                // Tải lại dữ liệu khi một đối tượng Drug được xóa
-                fDrugManagement_Load(null, null);
-            };
         }
         private void cbDrugCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -195,6 +189,13 @@ namespace BANTHUOC
                 return;
             fNewDrug f = new fNewDrug();
             f.Show();
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            long selectedCategoryId = Convert.ToInt64(cbDrugCategory.SelectedValue);
+            string drugName = txtName.Text.Trim();
+            DisplayDrugData(selectedCategoryId, drugName);
         }
     }
 }

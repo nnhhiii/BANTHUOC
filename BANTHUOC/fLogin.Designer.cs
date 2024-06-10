@@ -34,54 +34,63 @@
             lblPass = new Label();
             txtUsername = new TextBox();
             txtPassword = new TextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // cbPass
             // 
             cbPass.AutoSize = true;
-            cbPass.Location = new Point(68, 305);
+            cbPass.Location = new Point(127, 294);
             cbPass.Margin = new Padding(2);
             cbPass.Name = "cbPass";
-            cbPass.Size = new Size(132, 24);
+            cbPass.Size = new Size(148, 24);
             cbPass.TabIndex = 0;
-            cbPass.Text = "Show Password";
+            cbPass.Text = "Hiển thị mật khẩu";
             cbPass.UseVisualStyleBackColor = true;
             cbPass.CheckedChanged += cbPass_CheckedChanged;
             // 
             // btLogin
             // 
-            btLogin.Location = new Point(73, 351);
+            btLogin.BackColor = Color.SeaGreen;
+            btLogin.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btLogin.ForeColor = Color.White;
+            btLogin.Location = new Point(127, 354);
             btLogin.Margin = new Padding(2);
             btLogin.Name = "btLogin";
-            btLogin.Size = new Size(107, 45);
+            btLogin.Size = new Size(295, 54);
             btLogin.TabIndex = 1;
-            btLogin.Text = "Login";
-            btLogin.UseVisualStyleBackColor = true;
+            btLogin.Text = "Đăng Nhập";
+            btLogin.UseVisualStyleBackColor = false;
             btLogin.Click += btLogin_Click;
             // 
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(73, 94);
+            lblUsername.Font = new Font("Segoe UI", 10F);
+            lblUsername.ForeColor = Color.FromArgb(64, 64, 64);
+            lblUsername.Location = new Point(132, 107);
             lblUsername.Margin = new Padding(2, 0, 2, 0);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(75, 20);
+            lblUsername.Size = new Size(129, 23);
             lblUsername.TabIndex = 3;
-            lblUsername.Text = "Username";
+            lblUsername.Text = "Tên Đăng Nhập";
             // 
             // lblPass
             // 
             lblPass.AutoSize = true;
-            lblPass.Location = new Point(73, 196);
+            lblPass.Font = new Font("Segoe UI", 10F);
+            lblPass.ForeColor = Color.FromArgb(64, 64, 64);
+            lblPass.Location = new Point(132, 198);
             lblPass.Margin = new Padding(2, 0, 2, 0);
             lblPass.Name = "lblPass";
-            lblPass.Size = new Size(70, 20);
+            lblPass.Size = new Size(82, 23);
             lblPass.TabIndex = 4;
-            lblPass.Text = "Password";
+            lblPass.Text = "Mật khẩu";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(73, 140);
+            txtUsername.BorderStyle = BorderStyle.FixedSingle;
+            txtUsername.Location = new Point(132, 138);
             txtUsername.Margin = new Padding(2);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(242, 27);
@@ -89,18 +98,33 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(73, 249);
+            txtPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtPassword.Location = new Point(132, 229);
             txtPassword.Margin = new Padding(2);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(242, 27);
             txtPassword.TabIndex = 6;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Broadway", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Green;
+            label1.Location = new Point(106, 34);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(373, 42);
+            label1.TabIndex = 7;
+            label1.Text = "Pharmacity Store";
+            // 
             // fLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(623, 464);
+            BackColor = Color.White;
+            ClientSize = new Size(562, 464);
+            Controls.Add(label1);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
             Controls.Add(lblPass);
@@ -109,7 +133,7 @@
             Controls.Add(cbPass);
             Margin = new Padding(2);
             Name = "fLogin";
-            Text = "Hehe Pharmacy";
+            Text = "HIỆU THUỐC PHAMARCITY";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -122,5 +146,6 @@
         private Label lblPass;
         private TextBox txtUsername;
         private TextBox txtPassword;
+        private Label label1;
     }
 }

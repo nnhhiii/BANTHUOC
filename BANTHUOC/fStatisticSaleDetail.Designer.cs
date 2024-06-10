@@ -38,6 +38,7 @@
             Quantity = new DataGridViewTextBoxColumn();
             ImportPrice = new DataGridViewTextBoxColumn();
             btnClose = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ImportDetailId, ImportInvoiceId, DrugName, SupplierName, Content, UnitName, Quantity, ImportPrice });
-            dataGridView1.Location = new Point(32, 275);
+            dataGridView1.Location = new Point(57, 288);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1247, 369);
@@ -128,11 +129,23 @@
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Green;
+            label1.Location = new Point(509, 226);
+            label1.Name = "label1";
+            label1.Size = new Size(386, 35);
+            label1.TabIndex = 85;
+            label1.Text = "CHI TIẾT HÓA ĐƠN BÁN HÀNG";
+            // 
             // fStatisticSaleDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1500, 862);
+            Controls.Add(label1);
             Controls.Add(btnClose);
             Controls.Add(dataGridView1);
             Name = "fStatisticSaleDetail";
@@ -141,6 +154,7 @@
             Load += fStatisticSaleDetail_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -155,5 +169,6 @@
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn ImportPrice;
         private Button btnClose;
+        private Label label1;
     }
 }

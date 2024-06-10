@@ -51,6 +51,7 @@
             expiry_date = new DataGridViewTextBoxColumn();
             Delete = new DataGridViewButtonColumn();
             btnAdd = new Button();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)soLuongTheoDonViBan).BeginInit();
             ((System.ComponentModel.ISupportInitialize)giaNhap).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -99,7 +100,7 @@
             label11.Name = "label11";
             label11.Size = new Size(214, 23);
             label11.TabIndex = 85;
-            label11.Text = "Số lượng theo đơn vị bán";
+            label11.Text = "Số lượng nhập";
             // 
             // label10
             // 
@@ -237,11 +238,23 @@
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Green;
+            label3.Location = new Point(518, 168);
+            label3.Name = "label3";
+            label3.Size = new Size(337, 35);
+            label3.TabIndex = 109;
+            label3.Text = "NHẬP THUỐC TRONG KHO";
+            // 
             // fImportGood
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1344, 878);
+            Controls.Add(label3);
             Controls.Add(btnAdd);
             Controls.Add(dataGridView1);
             Controls.Add(tenThuoc);
@@ -288,5 +301,6 @@
         private DataGridViewTextBoxColumn Amount;
         private DataGridViewTextBoxColumn expiry_date;
         private DataGridViewButtonColumn Delete;
+        private Label label3;
     }
 }

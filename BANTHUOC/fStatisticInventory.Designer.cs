@@ -38,6 +38,7 @@
             soluongban = new DataGridViewTextBoxColumn();
             soluongton = new DataGridViewTextBoxColumn();
             btnClose = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { tenthuoc, loaithuoc, nhacungcap, donvinhap, ngayhethan, soluongnhap, soluongban, soluongton });
-            dataGridView1.Location = new Point(12, 211);
+            dataGridView1.Location = new Point(65, 230);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1170, 426);
@@ -131,11 +132,23 @@
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Green;
+            label1.Location = new Point(544, 170);
+            label1.Name = "label1";
+            label1.Size = new Size(264, 35);
+            label1.TabIndex = 86;
+            label1.Text = "THỐNG KÊ TỒN KHO";
+            // 
             // fStatisticInventory
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1247, 792);
+            Controls.Add(label1);
             Controls.Add(btnClose);
             Controls.Add(dataGridView1);
             Name = "fStatisticInventory";
@@ -144,6 +157,7 @@
             Load += fStatisticInventory_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -158,5 +172,6 @@
         private DataGridViewTextBoxColumn soluongban;
         private DataGridViewTextBoxColumn soluongton;
         private Button btnClose;
+        private Label label1;
     }
 }

@@ -38,6 +38,7 @@
             StaffEmail = new DataGridViewTextBoxColumn();
             invoiceDetail = new DataGridViewButtonColumn();
             btnClose = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -141,11 +142,23 @@
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Green;
+            label2.Location = new Point(587, 169);
+            label2.Name = "label2";
+            label2.Size = new Size(412, 35);
+            label2.TabIndex = 85;
+            label2.Text = "THỐNG KÊ HÓA ĐƠN BÁN HÀNG";
+            // 
             // fStatisticSale
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1430, 907);
+            Controls.Add(label2);
             Controls.Add(btnClose);
             Controls.Add(dataGridView1);
             Controls.Add(maskedTextBox1);
@@ -170,5 +183,6 @@
         private DataGridViewTextBoxColumn StaffFullName;
         private DataGridViewTextBoxColumn StaffEmail;
         private DataGridViewButtonColumn invoiceDetail;
+        private Label label2;
     }
 }

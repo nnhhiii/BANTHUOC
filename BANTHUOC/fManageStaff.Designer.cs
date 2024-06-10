@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            label1 = new Label();
+            txtName = new TextBox();
+            btFind = new Button();
+            btNew = new Button();
             id = new DataGridViewTextBoxColumn();
             full_name = new DataGridViewTextBoxColumn();
             staff_gender = new DataGridViewTextBoxColumn();
@@ -39,12 +43,8 @@
             staff_email = new DataGridViewTextBoxColumn();
             password = new DataGridViewTextBoxColumn();
             created_at = new DataGridViewTextBoxColumn();
-            Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
-            label1 = new Label();
-            txtName = new TextBox();
-            btFind = new Button();
-            btNew = new Button();
+            Edit = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -54,13 +54,51 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, full_name, staff_gender, date_of_birth, staff_address, phone_number, role_id, staff_email, password, created_at, Edit, Delete });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, full_name, staff_gender, date_of_birth, staff_address, phone_number, role_id, staff_email, password, created_at, Delete, Edit });
             dataGridView1.Location = new Point(12, 315);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1356, 374);
             dataGridView1.TabIndex = 11;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Green;
+            label1.Location = new Point(416, 219);
+            label1.Name = "label1";
+            label1.Size = new Size(273, 35);
+            label1.TabIndex = 9;
+            label1.Text = "QUẢN LÝ NHÂN VIÊN";
+            // 
+            // txtName
+            // 
+            txtName.Location = new Point(854, 242);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(197, 27);
+            txtName.TabIndex = 8;
+            // 
+            // btFind
+            // 
+            btFind.Location = new Point(1080, 236);
+            btFind.Name = "btFind";
+            btFind.Size = new Size(105, 39);
+            btFind.TabIndex = 7;
+            btFind.Text = "Tìm";
+            btFind.UseVisualStyleBackColor = true;
+            btFind.Click += btFind_Click;
+            // 
+            // btNew
+            // 
+            btNew.Location = new Point(71, 232);
+            btNew.Name = "btNew";
+            btNew.Size = new Size(130, 47);
+            btNew.TabIndex = 6;
+            btNew.Text = "Nhập mới";
+            btNew.UseVisualStyleBackColor = true;
+            btNew.Click += btNew_Click;
             // 
             // id
             // 
@@ -143,17 +181,6 @@
             created_at.Name = "created_at";
             created_at.Width = 125;
             // 
-            // Edit
-            // 
-            Edit.HeaderText = "Sửa";
-            Edit.MinimumWidth = 6;
-            Edit.Name = "Edit";
-            Edit.Resizable = DataGridViewTriState.True;
-            Edit.SortMode = DataGridViewColumnSortMode.Automatic;
-            Edit.Text = "Sửa";
-            Edit.UseColumnTextForButtonValue = true;
-            Edit.Width = 125;
-            // 
             // Delete
             // 
             Delete.HeaderText = "Xóa";
@@ -165,43 +192,16 @@
             Delete.UseColumnTextForButtonValue = true;
             Delete.Width = 125;
             // 
-            // label1
+            // Edit
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F);
-            label1.ForeColor = Color.Green;
-            label1.Location = new Point(416, 219);
-            label1.Name = "label1";
-            label1.Size = new Size(259, 35);
-            label1.TabIndex = 9;
-            label1.Text = "QUẢN LÝ NHÂN VIÊN";
-            // 
-            // txtName
-            // 
-            txtName.Location = new Point(926, 242);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(125, 27);
-            txtName.TabIndex = 8;
-            // 
-            // btFind
-            // 
-            btFind.Location = new Point(1091, 241);
-            btFind.Name = "btFind";
-            btFind.Size = new Size(94, 29);
-            btFind.TabIndex = 7;
-            btFind.Text = "Tìm";
-            btFind.UseVisualStyleBackColor = true;
-            btFind.Click += btFind_Click;
-            // 
-            // btNew
-            // 
-            btNew.Location = new Point(44, 242);
-            btNew.Name = "btNew";
-            btNew.Size = new Size(94, 29);
-            btNew.TabIndex = 6;
-            btNew.Text = "Nhập mới";
-            btNew.UseVisualStyleBackColor = true;
-            btNew.Click += btNew_Click;
+            Edit.HeaderText = "Sửa";
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.Resizable = DataGridViewTriState.True;
+            Edit.SortMode = DataGridViewColumnSortMode.Automatic;
+            Edit.Text = "Sửa";
+            Edit.UseColumnTextForButtonValue = true;
+            Edit.Width = 125;
             // 
             // fManageStaff
             // 
@@ -239,7 +239,7 @@
         private DataGridViewTextBoxColumn staff_email;
         private DataGridViewTextBoxColumn password;
         private DataGridViewTextBoxColumn created_at;
-        private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
+        private DataGridViewButtonColumn Edit;
     }
 }
