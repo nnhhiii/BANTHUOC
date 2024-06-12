@@ -29,61 +29,68 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            ImportDetailId = new DataGridViewTextBoxColumn();
             ImportInvoiceId = new DataGridViewTextBoxColumn();
+            ImportDetailId = new DataGridViewTextBoxColumn();
             DrugName = new DataGridViewTextBoxColumn();
             SupplierName = new DataGridViewTextBoxColumn();
             Content = new DataGridViewTextBoxColumn();
-            UnitName = new DataGridViewTextBoxColumn();
-            Quantity = new DataGridViewTextBoxColumn();
             ImportPrice = new DataGridViewTextBoxColumn();
+            Amount = new DataGridViewTextBoxColumn();
             ExpiryDate = new DataGridViewTextBoxColumn();
-            btnClose = new Button();
+            TongTien = new MaskedTextBox();
+            label2 = new Label();
             label1 = new Label();
+            btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ImportDetailId, ImportInvoiceId, DrugName, SupplierName, Content, UnitName, Quantity, ImportPrice, ExpiryDate });
-            dataGridView1.Location = new Point(50, 194);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ImportInvoiceId, ImportDetailId, DrugName, SupplierName, Content, ImportPrice, Amount, ExpiryDate });
+            dataGridView1.Location = new Point(40, 237);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1247, 369);
-            dataGridView1.TabIndex = 0;
+            dataGridView1.Size = new Size(1255, 432);
+            dataGridView1.TabIndex = 87;
+            // 
+            // ImportInvoiceId
+            // 
+            ImportInvoiceId.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            ImportInvoiceId.DataPropertyName = "ImportInvoiceId";
+            ImportInvoiceId.HeaderText = "Mã Nhập Hàng";
+            ImportInvoiceId.MinimumWidth = 6;
+            ImportInvoiceId.Name = "ImportInvoiceId";
+            ImportInvoiceId.Width = 139;
             // 
             // ImportDetailId
             // 
             ImportDetailId.DataPropertyName = "ImportDetailId";
-            ImportDetailId.HeaderText = "Mã CTHD Nhập Hàng";
+            ImportDetailId.HeaderText = "Mã Chi Tiết";
             ImportDetailId.MinimumWidth = 6;
             ImportDetailId.Name = "ImportDetailId";
             ImportDetailId.Width = 125;
             // 
-            // ImportInvoiceId
-            // 
-            ImportInvoiceId.DataPropertyName = "ImportInvoiceId";
-            ImportInvoiceId.HeaderText = "Mã Hóa Đơn ";
-            ImportInvoiceId.MinimumWidth = 6;
-            ImportInvoiceId.Name = "ImportInvoiceId";
-            ImportInvoiceId.Width = 125;
-            // 
             // DrugName
             // 
+            DrugName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             DrugName.DataPropertyName = "DrugName";
             DrugName.HeaderText = "Tên Thuốc";
             DrugName.MinimumWidth = 6;
             DrugName.Name = "DrugName";
-            DrugName.Width = 125;
+            DrugName.Width = 105;
             // 
             // SupplierName
             // 
+            SupplierName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             SupplierName.DataPropertyName = "SupplierName";
             SupplierName.HeaderText = "Nhà Cung Cấp";
             SupplierName.MinimumWidth = 6;
             SupplierName.Name = "SupplierName";
-            SupplierName.Width = 125;
+            SupplierName.Width = 133;
             // 
             // Content
             // 
@@ -93,29 +100,22 @@
             Content.Name = "Content";
             Content.Width = 125;
             // 
-            // UnitName
-            // 
-            UnitName.DataPropertyName = "UnitName";
-            UnitName.HeaderText = "Đơn Vị";
-            UnitName.MinimumWidth = 6;
-            UnitName.Name = "UnitName";
-            UnitName.Width = 125;
-            // 
-            // Quantity
-            // 
-            Quantity.DataPropertyName = "Quantity";
-            Quantity.HeaderText = "Số lượng";
-            Quantity.MinimumWidth = 6;
-            Quantity.Name = "Quantity";
-            Quantity.Width = 125;
-            // 
             // ImportPrice
             // 
+            ImportPrice.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             ImportPrice.DataPropertyName = "ImportPrice";
             ImportPrice.HeaderText = "Giá Nhập";
             ImportPrice.MinimumWidth = 6;
             ImportPrice.Name = "ImportPrice";
-            ImportPrice.Width = 125;
+            // 
+            // Amount
+            // 
+            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Amount.DataPropertyName = "Amount";
+            Amount.HeaderText = "Tổng tiền";
+            Amount.MinimumWidth = 6;
+            Amount.Name = "Amount";
+            Amount.Width = 101;
             // 
             // ExpiryDate
             // 
@@ -125,38 +125,56 @@
             ExpiryDate.Name = "ExpiryDate";
             ExpiryDate.Width = 125;
             // 
-            // btnClose
+            // TongTien
             // 
-            btnClose.BackgroundImage = Properties.Resources.thoat;
-            btnClose.BackgroundImageLayout = ImageLayout.Zoom;
-            btnClose.Location = new Point(1173, 669);
-            btnClose.Margin = new Padding(2);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(108, 61);
-            btnClose.TabIndex = 84;
-            btnClose.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnClose.UseVisualStyleBackColor = true;
-            btnClose.Click += btnClose_Click;
+            TongTien.Location = new Point(40, 750);
+            TongTien.Name = "TongTien";
+            TongTien.Size = new Size(154, 27);
+            TongTien.TabIndex = 91;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(40, 727);
+            label2.Name = "label2";
+            label2.Size = new Size(115, 20);
+            label2.TabIndex = 90;
+            label2.Text = "Tổng Tiền Nhập";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Green;
-            label1.Location = new Point(517, 139);
+            label1.Location = new Point(550, 180);
             label1.Name = "label1";
             label1.Size = new Size(322, 35);
-            label1.TabIndex = 85;
+            label1.TabIndex = 89;
             label1.Text = "CHI TIẾT HÓA ĐƠN NHẬP";
+            // 
+            // btnClose
+            // 
+            btnClose.BackgroundImage = Properties.Resources.thoat;
+            btnClose.BackgroundImageLayout = ImageLayout.Zoom;
+            btnClose.Location = new Point(1179, 738);
+            btnClose.Margin = new Padding(2);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(99, 51);
+            btnClose.TabIndex = 88;
+            btnClose.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // fStatisticImportDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1329, 907);
+            ClientSize = new Size(1496, 913);
+            Controls.Add(dataGridView1);
+            Controls.Add(TongTien);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnClose);
-            Controls.Add(dataGridView1);
             Name = "fStatisticImportDetail";
             Text = "fStatisticImportDetail";
             Load += fStatisticImportDetail_Load;
@@ -168,16 +186,17 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ImportDetailId;
         private DataGridViewTextBoxColumn ImportInvoiceId;
+        private DataGridViewTextBoxColumn ImportDetailId;
         private DataGridViewTextBoxColumn DrugName;
         private DataGridViewTextBoxColumn SupplierName;
         private DataGridViewTextBoxColumn Content;
-        private DataGridViewTextBoxColumn UnitName;
-        private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn ImportPrice;
+        private DataGridViewTextBoxColumn Amount;
         private DataGridViewTextBoxColumn ExpiryDate;
-        private Button btnClose;
+        private MaskedTextBox TongTien;
+        private Label label2;
         private Label label1;
+        private Button btnClose;
     }
 }

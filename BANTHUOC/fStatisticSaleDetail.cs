@@ -39,9 +39,16 @@ namespace BANTHUOC
                                           UnitName = unit.unit_name,
                                           Quantity = invoiceDetail.quantity,
                                           Price = drug.price,
+                                          Amount = invoiceDetail.amount,
                                       };
 
             dataGridView1.DataSource = SaleDetailsReport.ToList();
+
+            // Tính tổng tiền thành tiền
+            var totalAmount = SaleDetailsReport.Sum(importInvoice => importInvoice.Amount);
+
+            // Hiển thị tổng tiền thành tiền lên TextBox
+            TongTien.Text = totalAmount.ToString("N2"); // Định dạng số thập phân
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -25,7 +25,7 @@ namespace BANTHUOC
 
         private void fStatisticSale_Load(object sender, EventArgs e)
         {
-            var importReport = from invoice in db.HoaDonBanHang
+            var saleReport = from invoice in db.HoaDonBanHang
                                join staff in db.NhanVien on invoice.employee_id equals staff.id
                                orderby invoice.id descending
                                select new
@@ -36,9 +36,13 @@ namespace BANTHUOC
                                    StaffFullName = staff.full_name,
                                    StaffEmail = staff.staff_email
                                };
+            dataGridView1.DataSource = saleReport.ToList();
 
+            // Tính tổng tiền thành tiền của các hóa đơn
+            var totalAmount = saleReport.Sum(invoice => invoice.TotalAmount);
 
-            dataGridView1.DataSource = importReport.ToList();
+            // Hiển thị tổng tiền thành tiền lên TextBox
+            TongTien.Text = totalAmount.ToString("N2"); // Định dạng số thập phân
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

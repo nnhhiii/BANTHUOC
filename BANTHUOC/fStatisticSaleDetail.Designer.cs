@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            btnClose = new Button();
+            label1 = new Label();
+            TongTien = new MaskedTextBox();
+            label2 = new Label();
             ImportDetailId = new DataGridViewTextBoxColumn();
             ImportInvoiceId = new DataGridViewTextBoxColumn();
             DrugName = new DataGridViewTextBoxColumn();
@@ -37,20 +41,59 @@
             UnitName = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             ImportPrice = new DataGridViewTextBoxColumn();
-            btnClose = new Button();
-            label1 = new Label();
+            Amount = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ImportDetailId, ImportInvoiceId, DrugName, SupplierName, Content, UnitName, Quantity, ImportPrice });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ImportDetailId, ImportInvoiceId, DrugName, SupplierName, Content, UnitName, Quantity, ImportPrice, Amount });
             dataGridView1.Location = new Point(57, 288);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1247, 369);
             dataGridView1.TabIndex = 1;
+            // 
+            // btnClose
+            // 
+            btnClose.BackgroundImage = Properties.Resources.thoat;
+            btnClose.BackgroundImageLayout = ImageLayout.Zoom;
+            btnClose.Location = new Point(1147, 731);
+            btnClose.Margin = new Padding(2);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(122, 61);
+            btnClose.TabIndex = 84;
+            btnClose.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Green;
+            label1.Location = new Point(509, 226);
+            label1.Name = "label1";
+            label1.Size = new Size(386, 35);
+            label1.TabIndex = 85;
+            label1.Text = "CHI TIẾT HÓA ĐƠN BÁN HÀNG";
+            // 
+            // TongTien
+            // 
+            TongTien.Location = new Point(77, 731);
+            TongTien.Name = "TongTien";
+            TongTien.Size = new Size(154, 27);
+            TongTien.TabIndex = 88;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(77, 708);
+            label2.Name = "label2";
+            label2.Size = new Size(75, 20);
+            label2.TabIndex = 87;
+            label2.Text = "Tổng Tiền";
             // 
             // ImportDetailId
             // 
@@ -116,35 +159,21 @@
             ImportPrice.Name = "ImportPrice";
             ImportPrice.Width = 125;
             // 
-            // btnClose
+            // Amount
             // 
-            btnClose.BackgroundImage = Properties.Resources.thoat;
-            btnClose.BackgroundImageLayout = ImageLayout.Zoom;
-            btnClose.Location = new Point(1147, 731);
-            btnClose.Margin = new Padding(2);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(122, 61);
-            btnClose.TabIndex = 84;
-            btnClose.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnClose.UseVisualStyleBackColor = true;
-            btnClose.Click += btnClose_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Green;
-            label1.Location = new Point(509, 226);
-            label1.Name = "label1";
-            label1.Size = new Size(386, 35);
-            label1.TabIndex = 85;
-            label1.Text = "CHI TIẾT HÓA ĐƠN BÁN HÀNG";
+            Amount.DataPropertyName = "amount";
+            Amount.HeaderText = "Thành Tiền";
+            Amount.MinimumWidth = 6;
+            Amount.Name = "Amount";
+            Amount.Width = 125;
             // 
             // fStatisticSaleDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1500, 862);
+            Controls.Add(TongTien);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnClose);
             Controls.Add(dataGridView1);
@@ -160,6 +189,10 @@
         #endregion
 
         private DataGridView dataGridView1;
+        private Button btnClose;
+        private Label label1;
+        private MaskedTextBox TongTien;
+        private Label label2;
         private DataGridViewTextBoxColumn ImportDetailId;
         private DataGridViewTextBoxColumn ImportInvoiceId;
         private DataGridViewTextBoxColumn DrugName;
@@ -168,7 +201,6 @@
         private DataGridViewTextBoxColumn UnitName;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn ImportPrice;
-        private Button btnClose;
-        private Label label1;
+        private DataGridViewTextBoxColumn Amount;
     }
 }

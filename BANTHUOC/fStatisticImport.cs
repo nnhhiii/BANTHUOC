@@ -36,6 +36,12 @@ namespace BANTHUOC
 
             dataGridView1.DataSource = importReport.ToList();
 
+            // Tính tổng tiền thành tiền của các hóa đơn
+            var totalAmount = importReport.Sum(importInvoice => importInvoice.TotalAmount);
+
+            // Hiển thị tổng tiền thành tiền lên TextBox
+            TongTien.Text = totalAmount.ToString("N2"); // Định dạng số thập phân
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)

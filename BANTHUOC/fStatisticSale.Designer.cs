@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
+            TongTien = new MaskedTextBox();
             dataGridView1 = new DataGridView();
             InvoiceId = new DataGridViewTextBoxColumn();
             CreatedAt = new DataGridViewTextBoxColumn();
@@ -51,12 +51,12 @@
             label1.TabIndex = 1;
             label1.Text = "Tổng tiền bán hàng";
             // 
-            // maskedTextBox1
+            // TongTien
             // 
-            maskedTextBox1.Location = new Point(87, 789);
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(125, 27);
-            maskedTextBox1.TabIndex = 5;
+            TongTien.Location = new Point(87, 789);
+            TongTien.Name = "TongTien";
+            TongTien.Size = new Size(154, 27);
+            TongTien.TabIndex = 5;
             // 
             // dataGridView1
             // 
@@ -161,7 +161,7 @@
             Controls.Add(label2);
             Controls.Add(btnClose);
             Controls.Add(dataGridView1);
-            Controls.Add(maskedTextBox1);
+            Controls.Add(TongTien);
             Controls.Add(label1);
             Name = "fStatisticSale";
             Text = "THỐNG KÊ HÓA ĐƠN BÁN HÀNG";
@@ -174,7 +174,7 @@
 
         #endregion
         private Label label1;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox TongTien;
         private DataGridView dataGridView1;
         private Button btnClose;
         private DataGridViewTextBoxColumn InvoiceId;

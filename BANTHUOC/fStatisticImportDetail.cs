@@ -38,10 +38,17 @@ namespace BANTHUOC
                                           UnitName = unit.unit_name,
                                           Quantity = importDetail.quantity,
                                           ImportPrice = importDetail.import_price,
-                                          ExpiryDate = importDetail.expiry_date
+                                          ExpiryDate = importDetail.expiry_date,
+                                          Amount = importDetail.amount,
                                       };
 
             dataGridView1.DataSource = importDetailsReport.ToList();
+
+            // Tính tổng tiền thành tiền
+            var totalAmount = importDetailsReport.Sum(importDetail => importDetail.Amount);
+
+            // Hiển thị tổng tiền thành tiền lên TextBox
+            TongTien.Text = totalAmount.ToString("N2"); // Định dạng số thập phân
         }
 
         private void btnClose_Click(object sender, EventArgs e)

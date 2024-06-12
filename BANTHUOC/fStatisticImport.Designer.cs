@@ -37,6 +37,8 @@
             importDetail = new DataGridViewButtonColumn();
             btnClose = new Button();
             label1 = new Label();
+            TongTien = new MaskedTextBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -135,11 +137,29 @@
             label1.TabIndex = 84;
             label1.Text = "THỐNG KÊ HÓA ĐƠN NHẬP";
             // 
+            // TongTien
+            // 
+            TongTien.Location = new Point(63, 706);
+            TongTien.Name = "TongTien";
+            TongTien.Size = new Size(154, 27);
+            TongTien.TabIndex = 86;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(63, 683);
+            label2.Name = "label2";
+            label2.Size = new Size(115, 20);
+            label2.TabIndex = 85;
+            label2.Text = "Tổng Tiền Nhập";
+            // 
             // fStatisticImport
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1351, 802);
+            Controls.Add(TongTien);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnClose);
             Controls.Add(dataGridView1);
@@ -163,5 +183,7 @@
         private DataGridViewTextBoxColumn StaffEmail;
         private DataGridViewButtonColumn importDetail;
         private Label label1;
+        private MaskedTextBox TongTien;
+        private Label label2;
     }
 }
