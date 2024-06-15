@@ -43,7 +43,7 @@ namespace BANTHUOC
         {
             if (Utility.IsOpeningForm("fManageDrug"))
                 return;
-            fManageDrug f = new fManageDrug();
+            fManageDrug f = new fManageDrug(loggedInEmployee);
             f.MdiParent = this;
             f.Show();
         }
@@ -52,7 +52,7 @@ namespace BANTHUOC
         {
             if (Utility.IsOpeningForm("fImportGood"))
                 return;
-            fImportGood f = new fImportGood();
+            fImportGood f = new fImportGood(loggedInEmployee);
             f.MdiParent = this;
             f.Show();
         }

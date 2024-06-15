@@ -6,9 +6,11 @@ namespace BANTHUOC
 {
     public partial class fManageDrug : Form
     {
-        public fManageDrug()
+        private Staff loggedInEmployee;
+        public fManageDrug(Staff loggedInEmployee)
         {
             InitializeComponent();
+            this.loggedInEmployee = loggedInEmployee;
         }
 
 
@@ -187,7 +189,7 @@ namespace BANTHUOC
         {
             if (Utility.IsOpeningForm("fNewDrug"))
                 return;
-            fNewDrug f = new fNewDrug();
+            fNewDrug f = new fNewDrug(loggedInEmployee);
             f.Show();
         }
 

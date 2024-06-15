@@ -9,9 +9,11 @@ namespace BANTHUOC
 {
     public partial class fNewDrug : Form
     {
-        public fNewDrug()
+        private Staff loggedInEmployee;
+        public fNewDrug(Staff loggedInEmployee)
         {
             InitializeComponent();
+            this.loggedInEmployee = loggedInEmployee;
         }
 
         private void fNewDrug_Load(object sender, EventArgs e)
@@ -114,7 +116,8 @@ namespace BANTHUOC
                                       // Lưu hình ảnh nếu có
                     if (!string.IsNullOrWhiteSpace(txtImageFile.Text))
                     {
-                        string ext = txtImageFile.Text.Substring(txtImageFile.Text.LastIndexOf("."), txtImageFile.Text.Length - txtImageFile.Text.LastIndexOf("."));
+                        string ext = txtImageFile.Text.Substring(txtImageFile.Text.LastIndexOf("."),
+                            txtImageFile.Text.Length - txtImageFile.Text.LastIndexOf("."));
                         drug.image = drug.id + ext;
                         pictureBox1.Image.Save(Utility.ImagePath + drug.id + ext);
                         db.SaveChanges(); //Lưu các thay đổi vào csdl
@@ -123,9 +126,9 @@ namespace BANTHUOC
                     decimal totalAmount = soluong * giaNhapValue;
                     ImportInvoice importInvoice = new ImportInvoice
                     {
-                        total_amount = totalAmount, // Tạm thời gán tổng tiền là 0
+                        total_amount = totalAmount, 
                         create_at = DateTime.Now,
-                        employee_id = 1
+                        employee_id = loggedInEmployee.id
                     };
 
                     db.HoaDonNhapHang.Add(importInvoice);

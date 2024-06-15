@@ -31,8 +31,8 @@ namespace BANTHUOC
                                       where invoice.id == invoiceId
                                     select new
                                       {
-                                          ImportInvoiceId = invoice.id,
-                                          ImportDetailId = invoiceDetail.id,
+                                          InvoiceId = invoice.id,
+                                          InvoiceDetailId = invoiceDetail.id,
                                           DrugName = drug.drug_name,
                                           SupplierName = supplier.supplier_name,
                                           Content = drug.content,
@@ -45,7 +45,7 @@ namespace BANTHUOC
             dataGridView1.DataSource = SaleDetailsReport.ToList();
 
             // Tính tổng tiền thành tiền
-            var totalAmount = SaleDetailsReport.Sum(importInvoice => importInvoice.Amount);
+            var totalAmount = SaleDetailsReport.Sum(invoiceDetail => invoiceDetail.Amount);
 
             // Hiển thị tổng tiền thành tiền lên TextBox
             TongTien.Text = totalAmount.ToString("N2"); // Định dạng số thập phân

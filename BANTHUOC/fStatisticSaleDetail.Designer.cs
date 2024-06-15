@@ -40,7 +40,7 @@
             Content = new DataGridViewTextBoxColumn();
             UnitName = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
-            ImportPrice = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
             Amount = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -48,7 +48,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ImportDetailId, ImportInvoiceId, DrugName, SupplierName, Content, UnitName, Quantity, ImportPrice, Amount });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ImportDetailId, ImportInvoiceId, DrugName, SupplierName, Content, UnitName, Quantity, Price, Amount });
             dataGridView1.Location = new Point(57, 288);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -97,7 +97,7 @@
             // 
             // ImportDetailId
             // 
-            ImportDetailId.DataPropertyName = "ImportDetailId";
+            ImportDetailId.DataPropertyName = "InvoiceDetailId";
             ImportDetailId.HeaderText = "Mã CTHD Bán Hàng";
             ImportDetailId.MinimumWidth = 6;
             ImportDetailId.Name = "ImportDetailId";
@@ -105,7 +105,7 @@
             // 
             // ImportInvoiceId
             // 
-            ImportInvoiceId.DataPropertyName = "ImportInvoiceId";
+            ImportInvoiceId.DataPropertyName = "InvoiceId";
             ImportInvoiceId.HeaderText = "Mã Hóa Đơn ";
             ImportInvoiceId.MinimumWidth = 6;
             ImportInvoiceId.Name = "ImportInvoiceId";
@@ -151,17 +151,17 @@
             Quantity.Name = "Quantity";
             Quantity.Width = 125;
             // 
-            // ImportPrice
+            // Price
             // 
-            ImportPrice.DataPropertyName = "ImportPrice";
-            ImportPrice.HeaderText = "Đơn giá";
-            ImportPrice.MinimumWidth = 6;
-            ImportPrice.Name = "ImportPrice";
-            ImportPrice.Width = 125;
+            Price.DataPropertyName = "Price";
+            Price.HeaderText = "Đơn giá";
+            Price.MinimumWidth = 6;
+            Price.Name = "Price";
+            Price.Width = 125;
             // 
             // Amount
             // 
-            Amount.DataPropertyName = "amount";
+            Amount.DataPropertyName = "Amount";
             Amount.HeaderText = "Thành Tiền";
             Amount.MinimumWidth = 6;
             Amount.Name = "Amount";
@@ -200,7 +200,7 @@
         private DataGridViewTextBoxColumn Content;
         private DataGridViewTextBoxColumn UnitName;
         private DataGridViewTextBoxColumn Quantity;
-        private DataGridViewTextBoxColumn ImportPrice;
+        private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Amount;
     }
 }

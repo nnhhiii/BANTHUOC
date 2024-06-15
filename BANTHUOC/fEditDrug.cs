@@ -45,10 +45,8 @@ namespace BANTHUOC
             pictureBox1.ImageLocation = txtImageFile.Text; //Hiển thị hình
 
             var importPrice = db.CTHDNhapHang.FirstOrDefault(c => c.drug_id == drug.id)?.import_price;
-            if (importPrice != null)
-            {
-                giaNhap.Text = importPrice.Value.ToString();
-            }
+            giaNhap.Text = importPrice.Value.ToString();
+            
 
             //hiện combobox loại thuốc
             loaiThuoc.DisplayMember = "category_name";
@@ -156,7 +154,8 @@ namespace BANTHUOC
 
                 if (!string.IsNullOrWhiteSpace(txtImageFile.Text))
                 {
-                    string ext = txtImageFile.Text.Substring(txtImageFile.Text.LastIndexOf("."), txtImageFile.Text.Length - txtImageFile.Text.LastIndexOf("."));
+                    string ext = txtImageFile.Text.Substring(txtImageFile.Text.LastIndexOf("."),
+                        txtImageFile.Text.Length - txtImageFile.Text.LastIndexOf("."));
                     drug.image = drug.id + ext;
                     pictureBox1.Image.Save(Utility.ImagePath + drug.id + ext);
                     db.SaveChanges(); //Lưu các thay đổi vào csdl

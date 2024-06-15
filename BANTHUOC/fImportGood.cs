@@ -16,26 +16,45 @@ namespace BANTHUOC
         // Biến toàn cục để lưu trữ hóa đơn nhập hàng hiện tại
         private ImportInvoice currentImportInvoice = null;
         private EFDbContext db = new EFDbContext();
-        private long import_invoice_id;
+        private Staff loggedInEmployee;
 
-        public fImportGood()
+        public fImportGood(Staff loggedInEmployee)
         {
             InitializeComponent();
+            this.loggedInEmployee = loggedInEmployee;
         }
-
-
+  
         private void fImportGood_Load(object sender, EventArgs e)
         {
-            using (var db = new EFDbContext())
-            {
-                tenThuoc.DisplayMember = "drug_name";
-                tenThuoc.ValueMember = "id";
-                tenThuoc.DataSource = db.Thuoc
-                   .Select(c => new { c.id, c.drug_name })
-                   .ToList();
-            }
+            tenThuoc.DisplayMember = "drug_name";
+            tenThuoc.ValueMember = "id";
+            tenThuoc.DataSource = db.Thuoc
+                .Select(c => new { c.id, c.drug_name })
+                .ToList();
         }
 
+        private void Update_TotalAmount()
+        {
+            if (currentImportInvoice != null)
+            {
+                currentImportInvoice = db.HoaDonNhapHang.FirstOrDefault(h => h.id == currentImportInvoice.id);
+                if (currentImportInvoice != null)
+                {
+                    currentImportInvoice.total_amount = db.CTHDNhapHang
+                        .Where(c => c.import_invoice_id == currentImportInvoice.id)
+                        .Sum(c => c.amount);
+                    db.SaveChanges();
+
+                    tenThuoc.Text = null;
+                    giaNhap.Text = null;
+                    soLuongTheoDonViBan.Text = null;
+
+                    dataGridView1.DataSource = db.CTHDNhapHang
+                        .Where(c => c.import_invoice_id == currentImportInvoice.id)
+                        .ToList();
+                }
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -58,25 +77,9 @@ namespace BANTHUOC
                     return;
                 }
                 // Cập nhật total_amount của ImportInvoice hiện tại
-                if (currentImportInvoice != null)
-                {
-                    currentImportInvoice = db.HoaDonNhapHang.FirstOrDefault(h => h.id == currentImportInvoice.id);
-                    if (currentImportInvoice != null)
-                    {
-                        currentImportInvoice.total_amount = db.CTHDNhapHang
-                            .Where(c => c.import_invoice_id == currentImportInvoice.id)
-                            .Sum(c => c.amount);
-                        db.SaveChanges();
+                Update_TotalAmount();
 
-                        tenThuoc.Text = null;
-                        giaNhap.Text = null;
-                        soLuongTheoDonViBan.Text = null;
 
-                        dataGridView1.DataSource = db.CTHDNhapHang
-                            .Where(c => c.import_invoice_id == currentImportInvoice.id)
-                            .ToList();
-                    }
-                }
             }
             toolTip1.Show("Lưu thành công.", btnSave, 0, 0, 1000);
         }
@@ -127,7 +130,7 @@ namespace BANTHUOC
                     {
                         total_amount = 0, // Tạm thời gán tổng tiền là 0
                         create_at = DateTime.Now,
-                        employee_id = 1
+                        employee_id = loggedInEmployee.id
                     };
                     db.HoaDonNhapHang.Add(currentImportInvoice);
                     db.SaveChanges();
@@ -155,24 +158,9 @@ namespace BANTHUOC
                     drug.quantity += soluong;
                 }
 
-
+                //Cập nhật lại total_amount của hóa đơn nhập hàng
                 currentImportInvoice = db.HoaDonNhapHang.FirstOrDefault(h => h.id == currentImportInvoice.id);
-                if (currentImportInvoice != null)
-                {
-                    // Tổng tiền
-                    currentImportInvoice.total_amount = db.CTHDNhapHang
-                        .Where(c => c.import_invoice_id == currentImportInvoice.id)
-                        .Sum(c => c.amount);
-                    db.SaveChanges();
-
-                    tenThuoc.Text = null;
-                    giaNhap.Text = null;
-                    soLuongTheoDonViBan.Text = null;
-
-                    dataGridView1.DataSource = db.CTHDNhapHang
-                        .Where(c => c.import_invoice_id == currentImportInvoice.id)
-                        .ToList();
-                }
+                Update_TotalAmount();
 
             }
         }
@@ -193,20 +181,9 @@ namespace BANTHUOC
                         // Xóa chi tiết hóa đơn nhập hàng khỏi cơ sở dữ liệu
                         db.CTHDNhapHang.Remove(importDetail);
                         db.SaveChanges();
-                        
-                        // Cập nhật lại total_amount của hóa đơn nhập hàng
-                        if (currentImportInvoice != null)
-                        {
-                            currentImportInvoice.total_amount = db.CTHDNhapHang
-                                .Where(c => c.import_invoice_id == currentImportInvoice.id)
-                                .Sum(c => c.amount);
-                            db.SaveChanges();
 
-                            // Hiển thị lại danh sách chi tiết hóa đơn nhập hàng
-                            dataGridView1.DataSource = db.CTHDNhapHang
-                                .Where(c => c.import_invoice_id == currentImportInvoice.id)
-                                .ToList();
-                        }
+                        // Cập nhật lại total_amount của hóa đơn nhập hàng
+                        Update_TotalAmount();
                     }
                     catch (Exception ex)
                     {

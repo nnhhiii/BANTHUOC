@@ -51,7 +51,7 @@ namespace BANTHUOC
             {
                 if (Utility.IsOpeningForm("fStatisticSaleDetail"))
                     return;
-                fStatisticImportDetail f = new fStatisticImportDetail(Convert.ToInt64(dataGridView1.Rows[e.RowIndex].Cells["InvoiceId"].Value));
+                fStatisticSaleDetail f = new fStatisticSaleDetail(Convert.ToInt64(dataGridView1.Rows[e.RowIndex].Cells["InvoiceId"].Value));
                 f.MdiParent = this.MdiParent;
                 f.Show();
             }
